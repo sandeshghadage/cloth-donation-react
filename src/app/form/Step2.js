@@ -1,14 +1,14 @@
 import React from "react";
 import { donationData } from "./page";
 
-interface Step2Props {
-  setCurrStep: React.Dispatch<React.SetStateAction<number>>;
-  setStep2Data: React.Dispatch<React.SetStateAction<donationData>>;
-  data: donationData;
-  step2Data: donationData;
-}
+// interface Step2Props {
+//   setCurrStep: React.Dispatch<React.SetStateAction<number>>;
+//   setStep2Data: React.Dispatch<React.SetStateAction<donationData>>;
+//   data: donationData;
+//   step2Data: donationData;
+// }
 
-const Step2: React.FC<Step2Props> = ({
+const Step2= ({
   setCurrStep,
   setStep2Data,
   step2Data,
@@ -24,7 +24,7 @@ const Step2: React.FC<Step2Props> = ({
     },
   ];
 
-  const handleLocationselect = (value: any) => {
+  const handleLocationselect = (value) => {
     setStep2Data((prevData) => ({
       ...prevData,
       vehicalType: value.name,

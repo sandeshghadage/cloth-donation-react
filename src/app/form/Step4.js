@@ -1,27 +1,27 @@
 import React, { useState, ChangeEvent } from "react";
 import { donationData } from "./page";
 
-interface Option {
-  isChecked: boolean;
-}
+// interface Option {
+//   isChecked: boolean;
+// }
 
-interface TimeSlot {
-  THURSDAY: string[];
-  FRIDAY: string[];
-  SATURDAY: string[];
-}
+// interface TimeSlot {
+//   THURSDAY: string[];
+//   FRIDAY: string[];
+//   SATURDAY: string[];
+// }
 
-interface Step4Props {
-  setCurrStep: React.Dispatch<React.SetStateAction<number>>;
-  setStep4Data: React.Dispatch<React.SetStateAction<donationData>>;
-  data: donationData;
-  step4Data: donationData;
-  step3Data: donationData;
-  step2Data: donationData;
-  step1Data: donationData;
-}
+// interface Step4Props {
+//   setCurrStep: React.Dispatch<React.SetStateAction<number>>;
+//   setStep4Data: React.Dispatch<React.SetStateAction<donationData>>;
+//   data: donationData;
+//   step4Data: donationData;
+//   step3Data: donationData;
+//   step2Data: donationData;
+//   step1Data: donationData;
+// }
 
-const Step4: React.FC<Step4Props> = ({
+const Step4 = ({
   setCurrStep,
   setStep4Data,
   step4Data,
@@ -29,12 +29,12 @@ const Step4: React.FC<Step4Props> = ({
   step2Data,
   step1Data,
 }) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-  const [isSelectedTimeSlot, setSelectedTimeSlot] = useState<{
-    day: string;
-    time: string;
-  } | null>(null);
-  const [comment, setComment] = useState<string>("");
+  const [isChecked, setIsChecked] = useState(false);
+  const [isSelectedTimeSlot, setSelectedTimeSlot] = useState({
+    day: "",
+    time: "",
+  });
+  const [comment, setComment] = useState("");
 
   const finalData = {
     ...step1Data,
@@ -43,7 +43,7 @@ const Step4: React.FC<Step4Props> = ({
     ...step4Data,
   };
 
-  const optionData: TimeSlot[] = [
+  const optionData = [
     {
       THURSDAY: [
         "10:00 AM - 12:00 PM",
@@ -78,7 +78,7 @@ const Step4: React.FC<Step4Props> = ({
     },
   ];
 
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (event) => {
     setStep4Data((prevData) => ({
       ...prevData,
       note: event.target.value,
@@ -87,17 +87,17 @@ const Step4: React.FC<Step4Props> = ({
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  const handleData = (day: string, timeSlot: string) => {
+  const handleData = (day, timeSlot) => {
     // console.log("Selected time slot:", day, timeSlot);
     setSelectedTimeSlot({ day, time: timeSlot });
   };
 
   // console.log("date", isSelectedTimeSlot);
   const onSubmit = async () => {
-    // console.log(97, finalData);
+    console.log(97, finalData);
     // console.log("first");
     try {
-      const res = await fetch("/api/sendEmail", {
+      const res = await fetch("/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Step4: React.FC<Step4Props> = ({
     }
   };
   // console.log(comment);
-  const handleStep4InputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleStep4InputChange = (e) => {
     const { name, value } = e.target;
     setStep4Data((prevData) => ({
       ...prevData,
@@ -154,31 +154,29 @@ const Step4: React.FC<Step4Props> = ({
                         <>
                           <span className="text-sm">{day}</span>
                           <div className="flex flex-row justify-between items-center gap-2 max-xl:flex-wrap max-xl:justify-around">
-                            {timeSlots.map(
-                              (timeSlot: string, timeIndex: number) => (
-                                <button
-                                  key={timeIndex}
-                                  onClick={() => {
-                                    handleData(day, timeSlot);
-                                    setStep4Data((prevData) => ({
-                                      ...prevData,
-                                      time: {
-                                        day: day,
-                                        timeSlot: timeSlot,
-                                      },
-                                    }));
-                                  }}
-                                  className={
-                                    isSelectedTimeSlot?.day === day &&
-                                    isSelectedTimeSlot?.time === timeSlot
-                                      ? "border-2 w-48 h-10 rounded-xl bg-orange-500 text-white"
-                                      : "border-2 border-gray-500 w-48 h-10 rounded-xl max-xl w-45"
-                                  }
-                                >
-                                  {timeSlot}
-                                </button>
-                              )
-                            )}
+                            {timeSlots.map((timeSlot, timeIndex) => (
+                              <button
+                                key={timeIndex}
+                                onClick={() => {
+                                  handleData(day, timeSlot);
+                                  setStep4Data((prevData) => ({
+                                    ...prevData,
+                                    time: {
+                                      day: day,
+                                      timeSlot: timeSlot,
+                                    },
+                                  }));
+                                }}
+                                className={
+                                  isSelectedTimeSlot?.day === day &&
+                                  isSelectedTimeSlot?.time === timeSlot
+                                    ? "border-2 w-48 h-10 rounded-xl bg-orange-500 text-white"
+                                    : "border-2 border-gray-500 w-48 h-10 rounded-xl max-xl w-45"
+                                }
+                              >
+                                {timeSlot}
+                              </button>
+                            ))}
                           </div>
                         </>
                       );

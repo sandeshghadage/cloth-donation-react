@@ -11,7 +11,8 @@ import FlowByteCarousel from "./ui/carousel";
 export default function Home() {
   return (
     <>
-      <FlowByteCarousel />
+      <div className="h-50 border-2">{/* <FlowByteCarousel /> */}</div>
+
       <div className="flex w-full justify-center gap-3 p-3 bg-white">
         <Link
           href="/form"

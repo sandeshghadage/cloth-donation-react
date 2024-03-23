@@ -4,79 +4,78 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step4 from "./Step4";
 import Step3 from "./Step3";
-import { pages } from "next/dist/build/templates/app-page";
 
-interface Step1FormData {
-  location: string;
-}
+// interface Step1FormData {
+//   location: string;
+// }
 
-interface Step2FormData {
-  vehicalType: string;
-}
+// interface Step2FormData {
+//   vehicalType: string;
+// }
 
-interface Step3FormData {
-  cartItems: [
-    {
-      name: string;
-      qty: number;
-      volume: number;
-    },
-    {
-      name: string;
-      qty: number;
-      volume: number;
-    },
-    {
-      name: string;
-      qty: number;
-      volume: number;
-    }
-  ];
-}
-interface Step4FormData {
-  userDetails: {
-    name: string;
-    email: string;
-    mobileNumber: string;
-    address: string;
-    city: string;
-    pincode: string;
-    flat: string;
-  };
-  note: string;
-  time: object;
-}
+// interface Step3FormData {
+//   cartItems: [
+//     {
+//       name: string;
+//       qty: number;
+//       volume: number;
+//     },
+//     {
+//       name: string;
+//       qty: number;
+//       volume: number;
+//     },
+//     {
+//       name: string;
+//       qty: number;
+//       volume: number;
+//     }
+//   ];
+// }
+// interface Step4FormData {
+//   userDetails: {
+//     name: string;
+//     email: string;
+//     mobileNumber: string;
+//     address: string;
+//     city: string;
+//     pincode: string;
+//     flat: string;
+//   };
+//   note: string;
+//   time: object;
+// }
 
-interface MultiStepFormProps {
-  onSubmit: (data: donationData) => void;
-}
+// interface MultiStepFormProps {
+//   onSubmit: (data: donationData) => void;
+// }
 
-export interface donationData {
-  location: string;
-  vehicalType: string;
-  cartItems: [];
-  time: object;
-  userDetails: {
-    name: string;
-    email: string;
-    mobileNumber: string;
-    address: string;
-    city: string;
-    pincode: string;
-    flat: string;
-  };
-  note: string;
-}
+// export interface donationData {
+//   location: string;
+//   vehicalType: string;
+//   cartItems: [];
+//   time: object;
+//   userDetails: {
+//     name: string;
+//     email: string;
+//     mobileNumber: string;
+//     address: string;
+//     city: string;
+//     pincode: string;
+//     flat: string;
+//   };
+//   note: string;
+// }
 
 const Form = () => {
-  const [currStep, setCurrStep] = useState<number>(1);
-  const [step1Data, setStep1Data] = useState<Step1FormData>({
+  const [currStep, setCurrStep] = useState(1);
+  const [step1Data, setStep1Data] = useState({
     location: "",
   });
-  const [step2Data, setStep2Data] = useState<Step2FormData>({
+  const [step2Data, setStep2Data] = useState({
     vehicalType: "",
   });
-  const [step3Data, setStep3Data] = useState<Step3FormData>({
+  const [step3Data, setStep3Data] = useState({
     cartItems: [
       {
         name: "Clothes",
@@ -95,7 +94,7 @@ const Form = () => {
       },
     ],
   });
-  const [step4Data, setStep4Data] = useState<Step4FormData>({
+  const [step4Data, setStep4Data] = useState({
     userDetails: {
       name: "",
       email: "",
@@ -109,19 +108,36 @@ const Form = () => {
     time: {},
   });
 
-  const handleStep1Submit = (e: React.FormEvent) => {
+  const [allDataCollection, setAllDataCollection] = useState({
+    location: "",
+    vehicalType: "",
+    cartItems: [],
+    time: {},
+    userDetails: {
+      name: "",
+      email: "",
+      mobileNumber: "",
+      address: "",
+      city: "",
+      pincode: "",
+      flat: "",
+    },
+    note: "",
+  });
+
+  const handleStep1Submit = (e) => {
     e.preventDefault();
     nextStep();
   };
 
-  const handleStep2Submit = (e: React.FormEvent) => {
+  const handleStep2Submit = (e) => {
     e.preventDefault();
     nextStep();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const formData: donationData = {
+    const formData = {
       location: step1Data.location,
       vehicalType: step2Data.vehicalType,
       cartItems: step3Data.cartItems,
@@ -140,7 +156,7 @@ const Form = () => {
     setCurrStep((prevStep) => prevStep - 1);
   };
 
-  const handleStep1InputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleStep1InputChange = (e) => {
     const { name, value } = e.target;
     setStep1Data((prevData) => ({
       ...prevData,
@@ -148,7 +164,7 @@ const Form = () => {
     }));
   };
 
-  const handleStep2InputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleStep2InputChange = (e) => {
     const { name, value } = e.target;
     setStep2Data((prevData) => ({
       ...prevData,
@@ -156,7 +172,7 @@ const Form = () => {
     }));
   };
 
-  const handleStep3InputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleStep3InputChange = (e) => {
     const { name, value } = e.target;
     setStep3Data((prevData) => ({
       ...prevData,
@@ -167,7 +183,7 @@ const Form = () => {
     }));
   };
 
-  const handleNoteChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleNoteChange = (e) => {
     const { value } = e.target;
     setStep3Data((prevData) => ({
       ...prevData,

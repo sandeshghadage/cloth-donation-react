@@ -8,24 +8,16 @@ import { donationData } from "./page";
 //   volume: number;
 // }
 
-interface Step3Data {
-  cartItems: { volume: number; qty: number }[];
-  // Add other properties if necessary
-}
 
-interface Step3Props {
-  setCurrStep: React.Dispatch<React.SetStateAction<number>>;
-  setStep3Data: React.Dispatch<React.SetStateAction<donationData>>;
-  data: donationData;
-  step3Data: donationData;
-}
 
-const Step3: React.FC<Step3Props> = ({
+
+
+const Step3= ({
   setCurrStep,
   setStep3Data,
   step3Data,
 }) => {
-  const [finalVolume, setFinalVolume] = useState<number>(0);
+  const [finalVolume, setFinalVolume] = useState(0);
   const optionData = [
     {
       name: "Clothes",
@@ -78,7 +70,7 @@ const Step3: React.FC<Step3Props> = ({
             }}
           >
             <div className="flex flex-col gap-3">
-              {step3Data.cartItems.map((item, index: number) => (
+              {step3Data.cartItems.map((item, index) => (
                 <div
                   key={index}
                   style={{
@@ -125,7 +117,7 @@ const Step3: React.FC<Step3Props> = ({
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
-                            Number(temp.cartItems[index].qty) - 1;
+                            (temp.cartItems[index].qty) - 1;
                           setStep3Data(temp);
                         }}
                       >
@@ -149,7 +141,7 @@ const Step3: React.FC<Step3Props> = ({
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
-                            Number(temp.cartItems[index].qty) + 1;
+                            (temp.cartItems[index].qty) + 1;
                           setStep3Data(temp);
                         }}
                       >

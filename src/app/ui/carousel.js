@@ -2,7 +2,7 @@ import { Carousel } from "flowbite-react";
 
 export default function FlowByteCarousel() {
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+    <div className="h-50 sm:h-50 xl:h-50 2xl:h-50">
       <Carousel pauseOnHover>
         <img
           src="https://flowbite.com/docs/images/carousel/carousel-1.svg"

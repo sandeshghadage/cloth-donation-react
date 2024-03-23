@@ -1,20 +1,15 @@
 import React from "react";
 import { donationData } from "../form/page";
 
-interface Step1Props {
-  setCurrStep: React.Dispatch<React.SetStateAction<number>>;
-  setStep1Data: React.Dispatch<React.SetStateAction<donationData>>;
-  data: donationData;
-  step1Data: donationData;
-}
+// interface Step1Props {
+//   setCurrStep: React.Dispatch<React.SetStateAction<number>>;
+//   setStep1Data: React.Dispatch<React.SetStateAction<donationData>>;
+//   data: donationData;
+//   step1Data: donationData;
+// }
 
-const Step1: React.FC<Step1Props> = ({
-  setCurrStep,
-  setStep1Data,
-  data,
-  step1Data,
-}) => {
-  const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+const Step1 = ({ setCurrStep, setStep1Data, data, step1Data }) => {
+  const handleLocationChange = (e) => {
     const { value } = e.target;
     setStep1Data((prevData) => ({
       ...prevData,
