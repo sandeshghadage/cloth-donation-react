@@ -1,5 +1,9 @@
 import React, { useState, ChangeEvent } from "react";
 import { donationData } from "./page";
+import { toast, ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 // import { useRouter } from "next/router";
 
 const Step4 = ({
@@ -84,13 +88,7 @@ const Step4 = ({
         console.log("Something went wrong: ", err);
       }
     } else {
-      setStep4Data((prevData) => ({
-        ...prevData,
-        errors: {
-          ...prevData.errors,
-          [isChecked]: "Please Check the box",
-        },
-      }));
+      toast.error("Please select checkbox");
     }
   };
 
@@ -153,6 +151,7 @@ const Step4 = ({
       className="flex flex-col gap-4 w-full px-10"
       // style={{ width: "40%" }}
     >
+      <ToastContainer />
       <div className=" flex justify-center items-center flex-col w-full my-8 py-4">
         <span className="text-center w-full text-xl">SCHEDULE A PICKUP</span>
         <span className="text-center w-full text-sm">
@@ -344,11 +343,6 @@ const Step4 = ({
                     I have read and agree with the Terms of Use.
                   </span>
                 </label>
-                {step4Data.errors.isChecked && (
-                  <span className="text-red-500">
-                    {step4Data.errors.isChecked}
-                  </span>
-                )}
               </div>
             </div>
           </div>
@@ -358,14 +352,16 @@ const Step4 = ({
             </h1>
             {step3Data && step3Data.cartItems && (
               <>
-                {step3Data?.cartItems.map((item) => {
-                  return (
-                    <div className="border-t-2 flex flex-row justify-between items-center py-2 px-6">
-                      <span>{item.name}</span>
-                      <span>{item.qty}</span>
-                    </div>
-                  );
-                })}
+                {step3Data?.cartItems
+                  .filter((item) => item.qty > 0)
+                  .map((item) => {
+                    return (
+                      <div className="border-t-2 flex flex-row justify-between items-center py-2 px-6">
+                        <span>{item.name}</span>
+                        <span>{item.qty}</span>
+                      </div>
+                    );
+                  })}
               </>
             )}
 
@@ -387,12 +383,10 @@ const Step4 = ({
           Back
         </button>
         <button
-          disabled={hasErrors()}
+          // disabled={hasErrors()}
           onClick={onSubmit}
           // className=" px-4 py-2 bg-orange-500 rounded text-white "
-          className={`px-4 py-2 rounded text-white ${
-            hasErrors() ? "bg-gray-500" : "bg-orange-500"
-          }`}
+          className={`px-4 py-2 rounded text-white ${"bg-orange-500"}`}
         >
           Proceed
         </button>
