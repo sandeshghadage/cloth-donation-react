@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { donationData } from "./page";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // interface Option {
 //   name: string;
@@ -48,8 +49,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
     if (found) {
       setCurrStep(4);
     } else {
-      console.log(found, 50);
-      toast.error("Please Add to cart for proceed");
+      toast.error("Please Add something to cart before proceeding");
     }
   };
 
@@ -58,6 +58,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
       className="flex justify-center items-center flex-col gap-4 p-4"
       style={{ width: "100%" }}
     >
+      <ToastContainer />
       <h3 style={{ fontSize: "24px" }}>PICK YOUR DONATION ITEMS</h3>
       <div
         className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full "
@@ -210,7 +211,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
           }}
           onClick={handleProceed}
         >
-          PRO
+          PROCEED
         </button>
       </div>
     </div>
