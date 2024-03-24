@@ -125,7 +125,7 @@ export async function POST(request) {
 
     let info = await transporter.sendMail({
       from: "Neha Rajbhar", // sender address
-      to: "nr470245@gmail.com", // list of receivers
+      to: "sandeshghadage3@gmail.com", // list of receivers
       subject: "Cloth donator detail is saved", // Subject line
       text: `Hello ${name},\n\nYour message: ${message}`, // plain text body
       // html: "<b>Hello world?</b>", // html body

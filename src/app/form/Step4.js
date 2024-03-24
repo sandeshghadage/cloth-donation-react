@@ -1,25 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { donationData } from "./page";
-
-// interface Option {
-//   isChecked: boolean;
-// }
-
-// interface TimeSlot {
-//   THURSDAY: string[];
-//   FRIDAY: string[];
-//   SATURDAY: string[];
-// }
-
-// interface Step4Props {
-//   setCurrStep: React.Dispatch<React.SetStateAction<number>>;
-//   setStep4Data: React.Dispatch<React.SetStateAction<donationData>>;
-//   data: donationData;
-//   step4Data: donationData;
-//   step3Data: donationData;
-//   step2Data: donationData;
-//   step1Data: donationData;
-// }
+import { useRouter } from "next/router";
 
 const Step4 = ({
   setCurrStep,
@@ -35,6 +16,7 @@ const Step4 = ({
     time: "",
   });
   const [comment, setComment] = useState("");
+  const router = useRouter();
 
   const finalData = {
     ...step1Data,
@@ -114,6 +96,7 @@ const Step4 = ({
       if (res.status === 400) {
         alert(`${body.message} 😢`);
       }
+      router.push("/");
     } catch (err) {
       console.log("Something went wrong: ", err);
     }
@@ -323,7 +306,7 @@ const Step4 = ({
                 <span className="text-sm">
                   Light Pickup (via 2-Wheeler) - Fee
                 </span>
-                <span className="text-emerald-500 text-sm">₹199/-</span>
+                <span className="text-emerald-500 text-sm">FREE</span>
               </div>
               <div className="text-sm">(Incl. all Taxes)</div>
             </div>
