@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Avatar,
   Dropdown,
@@ -18,14 +18,43 @@ import Link from "next/link";
 export default function FlowByteNavBar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [width, setWidth] = useState(null);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setTimeout(() => {
+      setIsMenuOpen(!isMenuOpen);
+    }, 100);
   };
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWidth(window.innerWidth);
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWidth(window.innerWidth);
+      };
+
+      setWidth(window.innerWidth);
+
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
 
   return (
     <Navbar fluid rounded>
-      <NavbarBrand href="#" className="border">
+      <NavbarBrand href="#">
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Cloth Donation
         </span>
@@ -84,44 +113,45 @@ export default function FlowByteNavBar() {
           }}
         >
           <ul className="flex flex-col sm:flex-row sm:space-x-16 sm:space-y-0 space-y-3">
-            <li>
-              <Link
-                href="/"
-                className={`link ${pathname === "/" ? "text-blue-400" : ""}`}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/aboutus"
-                className={`link ${
-                  pathname === "/aboutus" ? "text-blue-400" : ""
-                }`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/volunteer"
-                className={`link ${
-                  pathname === "/volunteer" ? "text-blue-400" : ""
-                }`}
-              >
-                Volunteer
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/faqs"
-                className={`link ${
-                  pathname === "/faqs" ? "text-blue-400" : ""
-                }`}
-              >
-                FAQs
-              </Link>
-            </li>
+            <Link
+              onClick={width < 640 && toggleMenu}
+              style={{ width: "100%" }}
+              href="/"
+              className={`link ${pathname === "/" ? "text-blue-400" : ""} p-1`}
+            >
+              Home
+            </Link>
+            <Link
+              onClick={width < 640 && toggleMenu}
+              style={{ width: "100%" }}
+              href="/aboutus"
+              className={`link ${
+                pathname === "/aboutus" ? "text-blue-400" : ""
+              } p-1`}
+            >
+              About
+            </Link>
+
+            <Link
+              onClick={width < 640 && toggleMenu}
+              style={{ width: "100%" }}
+              href="/volunteer"
+              className={`link ${
+                pathname === "/volunteer" ? "text-blue-400" : ""
+              } p-1`}
+            >
+              Volunteer
+            </Link>
+            <Link
+              onClick={width < 640 && toggleMenu}
+              style={{ width: "100%" }}
+              href="/faqs"
+              className={`link ${
+                pathname === "/faqs" ? "text-blue-400" : ""
+              } p-1`}
+            >
+              FAQs
+            </Link>
           </ul>
         </NavbarCollapse>
       </div>

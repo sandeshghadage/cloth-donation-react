@@ -6,12 +6,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import FlowByteCarousel from "./ui/carousel";
-// import FlowByteCarousel from "./ui/carousel";
 
 export default function Home() {
   return (
     <>
-      <div className="h-50 border-2">{/* <FlowByteCarousel /> */}</div>
+      <div className=" border" style={{ height: "350px", overflow: "hidden" }}>
+        {/* <FlowByteCarousel /> */}
+        <img
+          src="/Donations.jpg"
+          style={{ objectFit: "cover", height: "100%", width: "100%" }}
+        />
+      </div>
 
       <div className="flex w-full justify-center gap-3 p-3 bg-white">
         <Link
