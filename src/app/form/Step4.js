@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { donationData } from "./page";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const Step4 = ({
   setCurrStep,
@@ -15,8 +15,8 @@ const Step4 = ({
     day: "",
     time: "",
   });
-  const [comment, setComment] = useState("");
-  const router = useRouter();
+
+  // const router = useRouter();
 
   const finalData = {
     ...step1Data,
@@ -45,20 +45,6 @@ const Step4 = ({
     },
   ];
   console.log(54, step4Data);
-  const optionData1 = [
-    {
-      name: "cloths",
-      qty: "2",
-    },
-    {
-      name: "Footware",
-      qty: "6",
-    },
-    {
-      name: "stationary",
-      qty: "3",
-    },
-  ];
 
   const handleChange = (event) => {
     setStep4Data((prevData) => ({
@@ -70,38 +56,44 @@ const Step4 = ({
     setIsChecked(!isChecked);
   };
   const handleData = (day, timeSlot) => {
-    // console.log("Selected time slot:", day, timeSlot);
     setSelectedTimeSlot({ day, time: timeSlot });
   };
 
-  // console.log("date", isSelectedTimeSlot);
   const onSubmit = async () => {
-    console.log(97, finalData);
-    // console.log("first");
-    try {
-      const res = await fetch("/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    if (isChecked === true) {
+      try {
+        const res = await fetch("/api", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(finalData),
+        });
+
+        const body = await res.json();
+
+        if (res.ok) {
+          alert(`${body.message} 🚀`);
+        }
+
+        if (res.status === 400) {
+          alert(`${body.message} 😢`);
+        }
+        // router.push("/");
+      } catch (err) {
+        console.log("Something went wrong: ", err);
+      }
+    } else {
+      setStep4Data((prevData) => ({
+        ...prevData,
+        errors: {
+          ...prevData.errors,
+          [isChecked]: "Please Check the box",
         },
-        body: JSON.stringify(finalData),
-      });
-
-      const body = await res.json();
-
-      if (res.ok) {
-        alert(`${body.message} 🚀`);
-      }
-
-      if (res.status === 400) {
-        alert(`${body.message} 😢`);
-      }
-      router.push("/");
-    } catch (err) {
-      console.log("Something went wrong: ", err);
+      }));
     }
   };
-  // console.log(comment);
+
   const handleStep4InputChange = (e) => {
     const { name, value } = e.target;
     setStep4Data((prevData) => ({
@@ -111,6 +103,49 @@ const Step4 = ({
         [name]: value,
       },
     }));
+    validateField(name, value);
+  };
+
+  const validateField = (name, value) => {
+    let error = "";
+
+    switch (name) {
+      case "name":
+        error = value.trim() === "" ? "Name is required" : "";
+        break;
+      case "email":
+        error = value.includes("@") ? "" : "Email is Invalid";
+        break;
+      case "mobileNumber":
+        error = value.length === 10 ? "" : "Mobile Number should be 10 digits";
+        break;
+      case "flat":
+        error = value.trim() === "" ? "Flat is required" : "";
+        break;
+      case "address":
+        error = value.trim() === "" ? "Address is required" : "";
+        break;
+      case "city":
+        error = value.trim() === "" ? "City is required" : "";
+        break;
+      case "pincode":
+        error = value.trim() === "" ? "Pincode is required" : "";
+        break;
+
+      default:
+        break;
+    }
+    setStep4Data((prevData) => ({
+      ...prevData,
+      errors: {
+        ...prevData.errors,
+        [name]: error,
+      },
+    }));
+  };
+
+  const hasErrors = () => {
+    return Object.values(step4Data.errors).some((error) => error !== "");
   };
 
   return (
@@ -202,6 +237,10 @@ const Step4 = ({
                   value={step4Data.userDetails.name}
                   onChange={handleStep4InputChange}
                 />
+
+                {step4Data.errors.name && (
+                  <span className="text-red-500">{step4Data.errors.name}</span>
+                )}
               </div>
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
                 <input
@@ -211,6 +250,9 @@ const Step4 = ({
                   value={step4Data.userDetails.email}
                   onChange={handleStep4InputChange}
                 />
+                {step4Data.errors.email && (
+                  <span className="text-red-500">{step4Data.errors.email}</span>
+                )}
               </div>
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
                 <input
@@ -220,6 +262,11 @@ const Step4 = ({
                   value={step4Data.userDetails.mobileNumber}
                   onChange={handleStep4InputChange}
                 />
+                {step4Data.errors.mobileNumber && (
+                  <span className="text-red-500">
+                    {step4Data.errors.mobileNumber}
+                  </span>
+                )}
               </div>
               <div className="w-10/12 h-10  flex flex-row justify-center gap-4 rounded-xl">
                 <input
@@ -229,6 +276,9 @@ const Step4 = ({
                   value={step4Data.userDetails.flat}
                   onChange={handleStep4InputChange}
                 />
+                {step4Data.errors.flat && (
+                  <span className="text-red-500">{step4Data.errors.flat}</span>
+                )}
                 <input
                   className="w-7/12 h-full border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
                   placeholder="Full Address"
@@ -236,6 +286,11 @@ const Step4 = ({
                   value={step4Data.userDetails.address}
                   onChange={handleStep4InputChange}
                 />
+                {step4Data.errors.address && (
+                  <span className="text-red-500">
+                    {step4Data.errors.address}
+                  </span>
+                )}
               </div>
               <div className="w-10/12 h-10 flex flex-row justify-center gap-4 rounded-xl">
                 <input
@@ -245,6 +300,9 @@ const Step4 = ({
                   value={step4Data.userDetails.city}
                   onChange={handleStep4InputChange}
                 />
+                {step4Data.errors.city && (
+                  <span className="text-red-500">{step4Data.errors.city}</span>
+                )}
                 <input
                   className="w-6/12 h-full border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
                   placeholder="Pincode"
@@ -252,6 +310,11 @@ const Step4 = ({
                   value={step4Data.userDetails.pincode}
                   onChange={handleStep4InputChange}
                 />
+                {step4Data.errors.pincode && (
+                  <span className="text-red-500">
+                    {step4Data.errors.pincode}
+                  </span>
+                )}
               </div>
               <div className="w-9/12 h-10 mb-1 ">
                 {/* <input type="checkbox" className="border-2 rounded border-gray-400 outline-none outline-0"/> */}
@@ -281,6 +344,11 @@ const Step4 = ({
                     I have read and agree with the Terms of Use.
                   </span>
                 </label>
+                {step4Data.errors.isChecked && (
+                  <span className="text-red-500">
+                    {step4Data.errors.isChecked}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -319,8 +387,12 @@ const Step4 = ({
           Back
         </button>
         <button
+          disabled={hasErrors()}
           onClick={onSubmit}
-          className=" px-4 py-2 bg-orange-500 rounded text-white"
+          // className=" px-4 py-2 bg-orange-500 rounded text-white "
+          className={`px-4 py-2 rounded text-white ${
+            hasErrors() ? "bg-gray-500" : "bg-orange-500"
+          }`}
         >
           Proceed
         </button>

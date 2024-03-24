@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { donationData } from "./page";
-import { Toast } from "flowbite-react";
+import { toast } from "react-toastify";
 
 // interface Option {
 //   name: string;
@@ -42,6 +42,16 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
   useEffect(() => {
     calcVolume();
   }, [step3Data]);
+
+  const handleProceed = () => {
+    const found = step3Data.cartItems?.some((item) => item.qty > 0);
+    if (found) {
+      setCurrStep(4);
+    } else {
+      console.log(found, 50);
+      toast.error("Please Add to cart for proceed");
+    }
+  };
 
   return (
     <div
@@ -198,9 +208,9 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
             alignSelf: "center",
             padding: "12px 20px",
           }}
-          onClick={() => setCurrStep(4)}
+          onClick={handleProceed}
         >
-          PROCEED
+          PRO
         </button>
       </div>
     </div>

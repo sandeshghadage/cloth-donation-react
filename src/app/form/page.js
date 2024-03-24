@@ -5,75 +5,15 @@ import Step2 from "./Step2";
 import Step4 from "./Step4";
 import Step3 from "./Step3";
 
-// interface Step1FormData {
-//   location: string;
-// }
-
-// interface Step2FormData {
-//   vehicalType: string;
-// }
-
-// interface Step3FormData {
-//   cartItems: [
-//     {
-//       name: string;
-//       qty: number;
-//       volume: number;
-//     },
-//     {
-//       name: string;
-//       qty: number;
-//       volume: number;
-//     },
-//     {
-//       name: string;
-//       qty: number;
-//       volume: number;
-//     }
-//   ];
-// }
-// interface Step4FormData {
-//   userDetails: {
-//     name: string;
-//     email: string;
-//     mobileNumber: string;
-//     address: string;
-//     city: string;
-//     pincode: string;
-//     flat: string;
-//   };
-//   note: string;
-//   time: object;
-// }
-
-// interface MultiStepFormProps {
-//   onSubmit: (data: donationData) => void;
-// }
-
-// export interface donationData {
-//   location: string;
-//   vehicalType: string;
-//   cartItems: [];
-//   time: object;
-//   userDetails: {
-//     name: string;
-//     email: string;
-//     mobileNumber: string;
-//     address: string;
-//     city: string;
-//     pincode: string;
-//     flat: string;
-//   };
-//   note: string;
-// }
-
 const Form = () => {
   const [currStep, setCurrStep] = useState(1);
   const [step1Data, setStep1Data] = useState({
     location: "",
+    error: false,
   });
   const [step2Data, setStep2Data] = useState({
     vehicalType: "",
+    error: false,
   });
   const [step3Data, setStep3Data] = useState({
     cartItems: [
@@ -93,6 +33,7 @@ const Form = () => {
         volume: 5,
       },
     ],
+    error: false,
   });
   const [step4Data, setStep4Data] = useState({
     userDetails: {
@@ -106,6 +47,7 @@ const Form = () => {
     },
     note: "",
     time: {},
+    errors: {},
   });
 
   const [allDataCollection, setAllDataCollection] = useState({

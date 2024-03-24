@@ -8,11 +8,7 @@ import { donationData } from "./page";
 //   step2Data: donationData;
 // }
 
-const Step2= ({
-  setCurrStep,
-  setStep2Data,
-  step2Data,
-}) => {
+const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
   const optionData = [
     {
       name: "Light Pickup",
@@ -31,9 +27,24 @@ const Step2= ({
     }));
   };
 
+  // const handleProceed = () => {
+  //   setCurrStep(3);
+  // };
+
   const handleProceed = () => {
-    setCurrStep(3);
+    if (step2Data.vehicalType.trim() === "") {
+      // Check if location is empty
+      console.log("Location is empty");
+      setStep2Data((prevData) => ({
+        ...prevData,
+        error: true,
+      }));
+    } else {
+      console.log("Location is not empty");
+      setCurrStep(3); // Proceed to the next step
+    }
   };
+
   return (
     <div
       className="flex justify-center items-center flex-col gap-4 p-4 my-5 my-md-0"
@@ -98,6 +109,11 @@ const Step2= ({
           ))}
         </div>
       </div>
+
+      {step2Data.error && (
+        <span className="text-red-500">Select any of one </span>
+      )}
+
       <button
         style={{
           backgroundColor: "#f15622",
