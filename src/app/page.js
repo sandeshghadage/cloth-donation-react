@@ -6,10 +6,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import FlowByteCarousel from "./ui/carousel";
+import ToastWrapper from "./ui/toastWrapper";
 
 export default function Home() {
   return (
     <>
+      <ToastWrapper />
       <div className=" border" style={{ height: "350px", overflow: "hidden" }}>
         {/* <FlowByteCarousel /> */}
         <img

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { donationData } from "./page";
+import {  toast } from "react-toastify";
 
 // interface Option {
 //   name: string;
@@ -8,15 +9,7 @@ import { donationData } from "./page";
 //   volume: number;
 // }
 
-
-
-
-
-const Step3= ({
-  setCurrStep,
-  setStep3Data,
-  step3Data,
-}) => {
+const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
   const [finalVolume, setFinalVolume] = useState(0);
   const optionData = [
     {
@@ -50,11 +43,22 @@ const Step3= ({
     calcVolume();
   }, [step3Data]);
 
+  const handleProceed = () => {
+    const found = step3Data.cartItems?.some((item) => item.qty > 0);
+    if (found) {
+      setCurrStep(4);
+    } else {
+      console.log(found, 50);
+      toast.error("Please Add to cart for proceed");
+    }
+  };
+
   return (
     <div
       className="flex justify-center items-center flex-col gap-4 p-4"
       style={{ width: "100%" }}
     >
+     
       <h3 style={{ fontSize: "24px" }}>PICK YOUR DONATION ITEMS</h3>
       <div
         className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full "
@@ -117,7 +121,7 @@ const Step3= ({
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
-                            (temp.cartItems[index].qty) - 1;
+                            temp.cartItems[index].qty - 1;
                           setStep3Data(temp);
                         }}
                       >
@@ -141,7 +145,7 @@ const Step3= ({
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
-                            (temp.cartItems[index].qty) + 1;
+                            temp.cartItems[index].qty + 1;
                           setStep3Data(temp);
                         }}
                       >
@@ -205,9 +209,9 @@ const Step3= ({
             alignSelf: "center",
             padding: "12px 20px",
           }}
-          onClick={() => setCurrStep(4)}
+          onClick={handleProceed}
         >
-          PROCEED
+          PRO
         </button>
       </div>
     </div>

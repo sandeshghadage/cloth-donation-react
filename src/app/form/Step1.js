@@ -17,8 +17,31 @@ const Step1 = ({ setCurrStep, setStep1Data, data, step1Data }) => {
     }));
   };
 
+  // const handleProceed = () => {
+  //   if (!step1Data.location.length > 1) {
+  //     console.log(22);
+  //     setCurrStep(2);
+  //   } else {
+  //     console.log(25);
+  //     setStep1Data((prevData) => ({
+  //       ...prevData,
+  //       error: true,
+  //     }));
+  //   }
+  // };
+
   const handleProceed = () => {
-    setCurrStep(2);
+    if (step1Data.location.trim() === "") {
+      // Check if location is empty
+      console.log("Location is empty");
+      setStep1Data((prevData) => ({
+        ...prevData,
+        error: true,
+      }));
+    } else {
+      console.log("Location is not empty");
+      setCurrStep(2); // Proceed to the next step
+    }
   };
 
   return (
@@ -40,6 +63,10 @@ const Step1 = ({ setCurrStep, setStep1Data, data, step1Data }) => {
             value={step1Data.location}
             onChange={handleLocationChange}
           />
+
+          {step1Data.error && (
+            <span className="text-red-500">Location is Required</span>
+          )}
         </div>
 
         <button
