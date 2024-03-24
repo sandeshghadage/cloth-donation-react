@@ -53,6 +53,10 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
     }
   };
 
+  function handleBack() {
+    setCurrStep(2);
+  }
+
   return (
     <div
       className="flex justify-center items-center flex-col gap-4 p-4"
@@ -197,7 +201,13 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
         </div>
       </div>
 
-      <div className="w-full flex justify-end px-4">
+      <div className="w-full flex justify-end px-4 gap-8">
+        <button
+          onClick={handleBack}
+          className=" px-4 py-2 bg-gray-400 text-white"
+        >
+          Back
+        </button>
         <button
           style={{
             backgroundColor: "#f15622",

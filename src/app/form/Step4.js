@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { donationData } from "./page";
 import { toast, ToastContainer } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,7 +20,7 @@ const Step4 = ({
     day: "",
     time: "",
   });
-
+  const router = useRouter();
   // const router = useRouter();
 
   const finalData = {
@@ -145,6 +146,11 @@ const Step4 = ({
   const hasErrors = () => {
     return Object.values(step4Data.errors).some((error) => error !== "");
   };
+
+  function handleBack() {
+    // router.push("/", { scroll: false });
+    setCurrStep(3);
+  }
 
   return (
     <div
@@ -379,7 +385,10 @@ const Step4 = ({
       </div>
 
       <div className=" flex justify-end gap-x-12 items-right flex-row w-11/12 my-10 ">
-        <button className=" px-4 py-2 bg-gray-400 rounded text-white">
+        <button
+          onClick={handleBack}
+          className=" px-4 py-2 bg-gray-400 rounded text-white"
+        >
           Back
         </button>
         <button
