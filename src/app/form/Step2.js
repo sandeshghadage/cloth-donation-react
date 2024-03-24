@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { donationData } from "./page";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // interface Step2Props {
 //   setCurrStep: React.Dispatch<React.SetStateAction<number>>;
@@ -9,47 +11,70 @@ import { donationData } from "./page";
 // }
 
 const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
-  const optionData = [
+  const [optionData, setOptionData] = useState([
     {
       name: "Light Pickup",
       cost: "FREE",
+      isChecked: false,
     },
     {
       name: "Heavy Pickup",
       cost: "FREE",
+      isChecked: false,
     },
-  ];
+  ]);
 
-  const handleLocationselect = (value) => {
-    setStep2Data((prevData) => ({
-      ...prevData,
-      vehicalType: value.name,
-    }));
-  };
+  // const handleLocationselect = (value) => {
+  //   setStep2Data((prevData) => ({
+  //     ...prevData,
+  //     vehicalType: value.name,
+  //   }));
+  // };
 
   // const handleProceed = () => {
   //   setCurrStep(3);
   // };
 
   const handleProceed = () => {
-    if (step2Data.vehicalType.trim() === "") {
-      // Check if location is empty
-      console.log("Location is empty");
-      setStep2Data((prevData) => ({
-        ...prevData,
-        error: true,
-      }));
+    const found = step2Data.some((item) => item.isChecked == true);
+    if (!found) {
+      // setStep2Data((prevData) => ({
+      //   ...prevData,
+      //   error: true,
+      // }));
+      toast.error("Please select vehicle before proceeding");
     } else {
       console.log("Location is not empty");
-      setCurrStep(3); // Proceed to the next step
+      setCurrStep(3);
     }
   };
 
+  function handleBack() {
+    setCurrStep(1);
+  }
+  const handleCheck = (clickedItem) => {
+    // console.log(53, clickedItem);
+    const updatedData = step2Data.map((item) => {
+      if (item.name === clickedItem.name) {
+        return {
+          ...item,
+          isChecked: true,
+        };
+      } else {
+        return {
+          ...item,
+          isChecked: false,
+        };
+      }
+    });
+    setStep2Data(updatedData);
+  };
   return (
     <div
       className="flex justify-center items-center flex-col gap-4 p-4 my-5 my-md-0"
       // style={{ height: "80vh" }}
     >
+      <ToastContainer />
       <h3 className="text-center" style={{ fontSize: "24px" }}>
         HOW DO YOU WISH TO DONATE?
       </h3>
@@ -72,7 +97,7 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
           PICKUP FROM DOORSTEP
         </div>
         <div className="flex flex-col gap-3">
-          {optionData.map((item, index) => (
+          {step2Data?.map((item, index) => (
             <div
               key={index}
               style={{
@@ -83,15 +108,40 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
                 justifyContent: "space-between",
               }}
               className="p-4"
-              onClick={() => handleLocationselect(item)}
+              onClick={() => handleCheck(item)}
             >
               <div className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  id="radio1"
-                  name="radiogroup"
-                  className="w-3 h-3 border-2 border-orange-500 rounded-full focus:ring-orange-500"
-                />
+                {item.isChecked ? (
+                  <div
+                    // onClick={() => handleCheck(item.name)}
+                    style={{ width: "22px", height: "22px" }}
+                  >
+                    <img
+                      src="/check2.jpeg"
+                      style={{
+                        objectFit: "cover",
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <svg
+                    // onClick={() => handleCheck(item.name)}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
+                    />
+                  </svg>
+                )}
                 <div style={{ fontSize: "15px", fontWeight: "600" }}>
                   {item.name}
                 </div>
@@ -110,25 +160,29 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
         </div>
       </div>
 
-      {step2Data.error && (
-        <span className="text-red-500">Select any of one </span>
-      )}
-
-      <button
-        style={{
-          backgroundColor: "#f15622",
-          border: "1px solid #f15622",
-          color: "#fff",
-          fontWeight: "600",
-          fontSize: "14px",
-          width: "120px",
-          alignSelf: "center",
-          padding: "12px 20px",
-        }}
-        onClick={handleProceed}
-      >
-        PROCEED
-      </button>
+      <div className="w-full flex justify-between gap-8">
+        <button
+          onClick={handleBack}
+          className=" px-4 py-2 bg-gray-400 text-white"
+        >
+          Back
+        </button>
+        <button
+          style={{
+            backgroundColor: "#f15622",
+            border: "1px solid #f15622",
+            color: "#fff",
+            fontWeight: "600",
+            fontSize: "14px",
+            width: "120px",
+            alignSelf: "center",
+            padding: "12px 20px",
+          }}
+          onClick={handleProceed}
+        >
+          PROCEED
+        </button>
+      </div>
     </div>
   );
 };

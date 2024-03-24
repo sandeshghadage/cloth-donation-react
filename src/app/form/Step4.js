@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { donationData } from "./page";
 import { toast, ToastContainer } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,7 +20,7 @@ const Step4 = ({
     day: "",
     time: "",
   });
-
+  const router = useRouter();
   // const router = useRouter();
 
   const finalData = {
@@ -68,28 +69,28 @@ const Step4 = ({
       if (hasErrors()) {
         toast.error("Please check all fields should be filled");
       } else {
-        // try {
-        //   const res = await fetch("/api", {
-        //     method: "POST",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify(finalData),
-        //   });
+        try {
+          const res = await fetch("/api", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(finalData),
+          });
 
-        //   const body = await res.json();
+          const body = await res.json();
 
-        //   if (res.ok) {
-        //     alert(`${body.message} 🚀`);
-        //   }
+          if (res.ok) {
+            alert(`${body.message} 🚀`);
+          }
 
-        //   if (res.status === 400) {
-        //     alert(`${body.message} 😢`);
-        //   }
-        //   // router.push("/");
-        // } catch (err) {
-        //   console.log("Something went wrong: ", err);
-        // }
+          if (res.status === 400) {
+            alert(`${body.message} 😢`);
+          }
+          // router.push("/");
+        } catch (err) {
+          console.log("Something went wrong: ", err);
+        }
         toast.success("form submit sucessfull");
       }
     } else {
@@ -150,7 +151,11 @@ const Step4 = ({
   const hasErrors = () => {
     return Object.values(step4Data.errors).some((error) => error === true);
   };
-  console.log(154, hasErrors());
+
+  function handleBack() {
+    setCurrStep(3);
+  }
+
   return (
     <div
       className="flex flex-col gap-4 w-full px-10"
@@ -409,7 +414,10 @@ const Step4 = ({
       </div>
 
       <div className=" flex justify-end gap-x-12 items-right flex-row w-11/12 my-10 ">
-        <button className=" px-4 py-2 bg-gray-400 rounded text-white">
+        <button
+          onClick={handleBack}
+          className=" px-4 py-2 bg-gray-400 rounded text-white"
+        >
           Back
         </button>
         <button

@@ -11,10 +11,19 @@ const Form = () => {
     location: "",
     error: false,
   });
-  const [step2Data, setStep2Data] = useState({
-    vehicalType: "",
-    error: false,
-  });
+  let var3 = [
+    {
+      name: "Light Pickup",
+      cost: "FREE",
+      isChecked: false,
+    },
+    {
+      name: "Heavy Pickup",
+      cost: "FREE",
+      isChecked: false,
+    },
+  ];
+  const [step2Data, setStep2Data] = useState(var3);
   const [step3Data, setStep3Data] = useState({
     cartItems: [
       {
@@ -86,18 +95,18 @@ const Form = () => {
     nextStep();
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = {
-      location: step1Data.location,
-      vehicalType: step2Data.vehicalType,
-      cartItems: step3Data.cartItems,
-      time: step3Data.time,
-      userDetails: step3Data.userDetails,
-      note: step3Data.note,
-    };
-    // onSubmit(formData);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const formData = {
+  //     location: step1Data.location,
+  //     vehicalType: step2Data.vehicalType,
+  //     cartItems: step3Data.cartItems,
+  //     time: step3Data.time,
+  //     userDetails: step3Data.userDetails,
+  //     note: step3Data.note,
+  //   };
+  //   // onSubmit(formData);
+  // };
   console.log(114, step4Data);
   const nextStep = () => {
     setCurrStep((prevStep) => prevStep + 1);
@@ -115,13 +124,13 @@ const Form = () => {
     }));
   };
 
-  const handleStep2InputChange = (e) => {
-    const { name, value } = e.target;
-    setStep2Data((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  // const handleStep2InputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setStep2Data((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
 
   const handleStep3InputChange = (e) => {
     const { name, value } = e.target;
