@@ -64,31 +64,36 @@ const Step4 = ({
   };
 
   const onSubmit = async () => {
-    if (isChecked === true) {
-      try {
-        const res = await fetch("/api", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(finalData),
-        });
+    if (isChecked === true && Object?.keys(step4Data.time).length != 0) {
+      if (hasErrors()) {
+        toast.error("Please check all fields should be filled");
+      } else {
+        // try {
+        //   const res = await fetch("/api", {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(finalData),
+        //   });
 
-        const body = await res.json();
+        //   const body = await res.json();
 
-        if (res.ok) {
-          alert(`${body.message} 🚀`);
-        }
+        //   if (res.ok) {
+        //     alert(`${body.message} 🚀`);
+        //   }
 
-        if (res.status === 400) {
-          alert(`${body.message} 😢`);
-        }
-        // router.push("/");
-      } catch (err) {
-        console.log("Something went wrong: ", err);
+        //   if (res.status === 400) {
+        //     alert(`${body.message} 😢`);
+        //   }
+        //   // router.push("/");
+        // } catch (err) {
+        //   console.log("Something went wrong: ", err);
+        // }
+        toast.success("form submit sucessfull");
       }
     } else {
-      toast.error("Please select checkbox");
+      toast.error("Please select checkbox and Time slot");
     }
   };
 
@@ -105,29 +110,29 @@ const Step4 = ({
   };
 
   const validateField = (name, value) => {
-    let error = "";
+    let error = true;
 
     switch (name) {
       case "name":
-        error = value.trim() === "" ? "Name is required" : "";
+        error = value.trim() === "" ? true : false;
         break;
       case "email":
-        error = value.includes("@") ? "" : "Email is Invalid";
+        error = value.includes("@") ? false : true;
         break;
       case "mobileNumber":
-        error = value.length === 10 ? "" : "Mobile Number should be 10 digits";
+        error = value.length === 10 ? false : true;
         break;
       case "flat":
-        error = value.trim() === "" ? "Flat is required" : "";
+        error = value.trim() === "" ? true : false;
         break;
       case "address":
-        error = value.trim() === "" ? "Address is required" : "";
+        error = value.trim() === "" ? true : false;
         break;
       case "city":
-        error = value.trim() === "" ? "City is required" : "";
+        error = value.trim() === "" ? true : false;
         break;
       case "pincode":
-        error = value.trim() === "" ? "Pincode is required" : "";
+        error = value.trim() === "" ? true : false;
         break;
 
       default:
@@ -143,9 +148,9 @@ const Step4 = ({
   };
 
   const hasErrors = () => {
-    return Object.values(step4Data.errors).some((error) => error !== "");
+    return Object.values(step4Data.errors).some((error) => error === true);
   };
-
+  console.log(154, hasErrors());
   return (
     <div
       className="flex flex-col gap-4 w-full px-10"
@@ -209,7 +214,7 @@ const Step4 = ({
               * We'll do our best to pass along your instructions to our Pickup
               Partner. Compliance isn't guaranteed.
             </span>
-            <div className=" border-orange-500 focus:border-blue-500 focus:outline-none">
+            <div className=" border-orange-500 border-2">
               <textarea
                 className=" border-orange-500 focus:border-blue-500 focus:outline-none p-2 w-full outline-orange-500 outline-offset-1 outline-width-0"
                 placeholder="Enter your comments here..."
@@ -233,12 +238,15 @@ const Step4 = ({
                   className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1"
                   placeholder="Name.."
                   name="name"
+                  required
                   value={step4Data.userDetails.name}
                   onChange={handleStep4InputChange}
                 />
 
                 {step4Data.errors.name && (
-                  <span className="text-red-500">{step4Data.errors.name}</span>
+                  <span className="text-red-500 text-sm pt-2">
+                    Name field is required
+                  </span>
                 )}
               </div>
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
@@ -246,11 +254,15 @@ const Step4 = ({
                   className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1"
                   placeholder="Email"
                   name="email"
+                  type="email"
+                  required
                   value={step4Data.userDetails.email}
                   onChange={handleStep4InputChange}
                 />
                 {step4Data.errors.email && (
-                  <span className="text-red-500">{step4Data.errors.email}</span>
+                  <span className="text-red-500 text-sm pt-2">
+                    email field is required and should be valid email
+                  </span>
                 )}
               </div>
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
@@ -258,62 +270,80 @@ const Step4 = ({
                   className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1"
                   placeholder="Mobile No.."
                   name="mobileNumber"
+                  type="number"
+                  required
                   value={step4Data.userDetails.mobileNumber}
                   onChange={handleStep4InputChange}
                 />
                 {step4Data.errors.mobileNumber && (
-                  <span className="text-red-500">
-                    {step4Data.errors.mobileNumber}
+                  <span className="text-red-500 text-sm pt-2">
+                    Mobile number is required & should be 10 digits
                   </span>
                 )}
               </div>
-              <div className="w-10/12 h-10  flex flex-row justify-center gap-4 rounded-xl">
-                <input
-                  className="w-5/12 h-full border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
-                  placeholder="Flat/Door"
-                  name="flat"
-                  value={step4Data.userDetails.flat}
-                  onChange={handleStep4InputChange}
-                />
-                {step4Data.errors.flat && (
-                  <span className="text-red-500">{step4Data.errors.flat}</span>
-                )}
-                <input
-                  className="w-7/12 h-full border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
-                  placeholder="Full Address"
-                  name="address"
-                  value={step4Data.userDetails.address}
-                  onChange={handleStep4InputChange}
-                />
-                {step4Data.errors.address && (
-                  <span className="text-red-500">
-                    {step4Data.errors.address}
-                  </span>
-                )}
+              <div className="w-10/12 h-15  flex flex-row justify-center gap-4 ">
+                <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
+                  <input
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    placeholder="Flat/Door"
+                    name="flat"
+                    required
+                    value={step4Data.userDetails.flat}
+                    onChange={handleStep4InputChange}
+                  />
+                  {step4Data.errors.flat && (
+                    <span className="text-red-500 text-sm pt-2">
+                      Flat field is required
+                    </span>
+                  )}
+                </div>
+                <div className="w-full h-full  flex flex-col justify-center  rounded-xl">
+                  <input
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    placeholder="Full Address"
+                    name="address"
+                    required
+                    value={step4Data.userDetails.address}
+                    onChange={handleStep4InputChange}
+                  />
+                  {step4Data.errors.address && (
+                    <span className="text-red-500 text-sm pt-2">
+                      Address field is required
+                    </span>
+                  )}
+                </div>
               </div>
-              <div className="w-10/12 h-10 flex flex-row justify-center gap-4 rounded-xl">
-                <input
-                  className="w-6/12 h-full border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
-                  placeholder="City"
-                  name="city"
-                  value={step4Data.userDetails.city}
-                  onChange={handleStep4InputChange}
-                />
-                {step4Data.errors.city && (
-                  <span className="text-red-500">{step4Data.errors.city}</span>
-                )}
-                <input
-                  className="w-6/12 h-full border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
-                  placeholder="Pincode"
-                  name="pincode"
-                  value={step4Data.userDetails.pincode}
-                  onChange={handleStep4InputChange}
-                />
-                {step4Data.errors.pincode && (
-                  <span className="text-red-500">
-                    {step4Data.errors.pincode}
-                  </span>
-                )}
+              <div className="w-10/12 h-15 flex flex-row justify-center gap-4 ">
+                <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
+                  <input
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    placeholder="City"
+                    name="city"
+                    required
+                    value={step4Data.userDetails.city}
+                    onChange={handleStep4InputChange}
+                  />
+                  {step4Data.errors.city && (
+                    <span className="text-red-500 text-sm pt-2">
+                      city field is required
+                    </span>
+                  )}
+                </div>
+                <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
+                  <input
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    placeholder="Pincode"
+                    name="pincode"
+                    required
+                    value={step4Data.userDetails.pincode}
+                    onChange={handleStep4InputChange}
+                  />
+                  {step4Data.errors.pincode && (
+                    <span className="text-red-500 text-sm pt-2">
+                      Pincode field is required
+                    </span>
+                  )}
+                </div>
               </div>
               <div className="w-9/12 h-10 mb-1 ">
                 {/* <input type="checkbox" className="border-2 rounded border-gray-400 outline-none outline-0"/> */}

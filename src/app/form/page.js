@@ -47,7 +47,15 @@ const Form = () => {
     },
     note: "",
     time: {},
-    errors: {},
+    errors: {
+      name: true,
+      email: true,
+      mobileNumber: true,
+      flat: true,
+      address: true,
+      city: true,
+      pincode: true,
+    },
     isChecked: false,
   });
 
