@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { donationData } from "./page";
+import { Toast } from "flowbite-react";
 
 // interface Option {
 //   name: string;
@@ -8,15 +9,7 @@ import { donationData } from "./page";
 //   volume: number;
 // }
 
-
-
-
-
-const Step3= ({
-  setCurrStep,
-  setStep3Data,
-  step3Data,
-}) => {
+const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
   const [finalVolume, setFinalVolume] = useState(0);
   const optionData = [
     {
@@ -117,7 +110,7 @@ const Step3= ({
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
-                            (temp.cartItems[index].qty) - 1;
+                            temp.cartItems[index].qty - 1;
                           setStep3Data(temp);
                         }}
                       >
@@ -141,7 +134,7 @@ const Step3= ({
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
-                            (temp.cartItems[index].qty) + 1;
+                            temp.cartItems[index].qty + 1;
                           setStep3Data(temp);
                         }}
                       >
