@@ -79,6 +79,7 @@ const Step4 = ({
 
         if (res.ok) {
           alert(`${body.message} 🚀`);
+          router.push("/", { scroll: false });
         }
 
         if (res.status === 400) {
@@ -148,7 +149,6 @@ const Step4 = ({
   };
 
   function handleBack() {
-    // router.push("/", { scroll: false });
     setCurrStep(3);
   }
 
