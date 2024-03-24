@@ -48,6 +48,7 @@ const Form = () => {
     note: "",
     time: {},
     errors: {},
+    isChecked: false,
   });
 
   const [allDataCollection, setAllDataCollection] = useState({
