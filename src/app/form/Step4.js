@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import { donationData } from "./page";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
@@ -16,6 +16,7 @@ const Step4 = ({
   step1Data,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [isSelectedTimeSlot, setSelectedTimeSlot] = useState({
     day: "",
     time: "",
@@ -49,7 +50,13 @@ const Step4 = ({
       ],
     },
   ];
-  console.log(54, step4Data);
+  // console.log(54, step2Data);
+
+  useEffect(() => {
+    const found = step2Data.find((item) => item.isChecked == true);
+    console.log(found);
+    setSelectedVehicle(found);
+  }, []);
 
   const handleChange = (event) => {
     setStep4Data((prevData) => ({
@@ -221,7 +228,7 @@ const Step4 = ({
             </span>
             <div className=" border-orange-500 border-2">
               <textarea
-                className=" border-orange-500 focus:border-blue-500 focus:outline-none p-2 w-full outline-orange-500 outline-offset-1 outline-width-0"
+                className=" border-orange-500 focus:border-blue-500 focus:outline-none p-2 w-full outline-orange-500 outline-offset-1 outline-width-0 dark:text-black"
                 placeholder="Enter your comments here..."
                 rows={4}
                 cols={50}
@@ -240,7 +247,7 @@ const Step4 = ({
             <div className="w-full  flex flex-col justify-center items-center gap-6">
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl ">
                 <input
-                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1"
+                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                   placeholder="Name.."
                   name="name"
                   required
@@ -256,7 +263,7 @@ const Step4 = ({
               </div>
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
                 <input
-                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1"
+                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                   placeholder="Email"
                   name="email"
                   type="email"
@@ -272,7 +279,7 @@ const Step4 = ({
               </div>
               <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
                 <input
-                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1"
+                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                   placeholder="Mobile No.."
                   name="mobileNumber"
                   type="number"
@@ -289,7 +296,7 @@ const Step4 = ({
               <div className="w-10/12 h-15  flex flex-row justify-center gap-4 ">
                 <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                     placeholder="Flat/Door"
                     name="flat"
                     required
@@ -304,7 +311,7 @@ const Step4 = ({
                 </div>
                 <div className="w-full h-full  flex flex-col justify-center  rounded-xl">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                     placeholder="Full Address"
                     name="address"
                     required
@@ -321,7 +328,7 @@ const Step4 = ({
               <div className="w-10/12 h-15 flex flex-row justify-center gap-4 ">
                 <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                     placeholder="City"
                     name="city"
                     required
@@ -336,7 +343,7 @@ const Step4 = ({
                 </div>
                 <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1"
+                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
                     placeholder="Pincode"
                     name="pincode"
                     required
@@ -382,7 +389,7 @@ const Step4 = ({
             </div>
           </div>
           <div className="w-8/12 border-2 bg-slate-100 flex flex-col justify-center items-left max-lg:w-10/12">
-            <h1 className=" flex items-center py-2 px-6 text-xl">
+            <h1 className=" flex items-center py-2 px-6 text-xl dark:text-black">
               Donated Items
             </h1>
             {step3Data && step3Data.cartItems && (
@@ -391,7 +398,7 @@ const Step4 = ({
                   .filter((item) => item.qty > 0)
                   .map((item) => {
                     return (
-                      <div className="border-t-2 flex flex-row justify-between items-center py-2 px-6">
+                      <div className="border-t-2 flex flex-row justify-between items-center py-2 px-6 dark:text-black">
                         <span>{item.name}</span>
                         <span>{item.qty}</span>
                       </div>
@@ -401,13 +408,15 @@ const Step4 = ({
             )}
 
             <div className="border-t-2 flex flex-col justify-between items-left py-2 px-6">
-              <div className="flex flex-row justify-between items-center">
-                <span className="text-sm">
-                  Light Pickup (via 2-Wheeler) - Fee
-                </span>
-                <span className="text-emerald-500 text-sm">FREE</span>
-              </div>
-              <div className="text-sm">(Incl. all Taxes)</div>
+              {selectedVehicle && (
+                <div className="flex flex-row justify-between items-center">
+                  <span className="text-sm dark:text-black">
+                    {selectedVehicle.name} - Fee
+                  </span>
+                  <span className="text-emerald-500 text-sm">FREE</span>
+                </div>
+              )}
+              <div className="text-sm dark:text-black">(Incl. all Taxes)</div>
             </div>
           </div>
         </div>

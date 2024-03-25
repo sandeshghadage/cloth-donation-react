@@ -46,7 +46,7 @@ const Step1 = ({ setCurrStep, setStep1Data, data, step1Data }) => {
 
   return (
     <div
-      className="flex justify-center items-center flex-col gap-4 p-3"
+      className="flex justify-center items-center flex-col gap-4 p-3 "
       style={{ height: "80vh" }}
     >
       <h3 className="text-center" style={{ fontSize: "24px" }}>
@@ -58,7 +58,7 @@ const Step1 = ({ setCurrStep, setStep1Data, data, step1Data }) => {
       <div className="flex justify-center" style={{ width: "100%" }}>
         <div className="w-10/12 h-10 border-2 border-orange-500">
           <input
-            className="w-full h-full px-2 outline-orange-500 outline-offset-1"
+            className="w-full h-full px-2 outline-orange-500 outline-offset-1 dark:text-black"
             placeholder="Enter your location ..."
             value={step1Data.location}
             onChange={handleLocationChange}

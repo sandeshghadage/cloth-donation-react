@@ -152,9 +152,9 @@ const Form = () => {
   };
   console.log(175, currStep);
   return (
-    <div className="border p-6 flex justify-center ">
+    <div className="p-6 flex justify-center ">
       <div
-        className="bg-white container flex justify-center items-center flex-col rounded"
+        className="bg-white dark:bg-slate-800 container flex justify-center items-center flex-col rounded"
         style={{ height: "100%" }}
       >
         {currStep === 1 && (

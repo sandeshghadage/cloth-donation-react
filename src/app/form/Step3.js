@@ -90,12 +90,15 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                   }}
                   className="p-4"
                 >
-                  <div style={{ fontSize: "15px", fontWeight: "600" }}>
+                  <div
+                    className="dark:text-black"
+                    style={{ fontSize: "15px", fontWeight: "600" }}
+                  >
                     {item.name}
                   </div>
                   {item.qty == 0 ? (
                     <div
-                      className="border flex flex-row justify-center items-center gap-1 bg-white"
+                      className="border flex flex-row justify-center items-center gap-1 bg-white dark:text-black"
                       style={{
                         border: "2px solid red",
                         height: "30px",
@@ -121,7 +124,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                       }}
                     >
                       <div
-                        className="p-1"
+                        className="p-1 dark:text-black"
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =
@@ -143,9 +146,10 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                           border: "none",
                           textAlign: "center",
                         }}
+                        className="dark:text-black"
                       />
                       <div
-                        className="p-1"
+                        className="p-1 dark:text-black"
                         onClick={() => {
                           const temp = { ...step3Data };
                           temp.cartItems[index].qty =

@@ -91,7 +91,7 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
       >
         {" "}
         <div
-          className="text-center uppercase mb-4"
+          className="text-center uppercase mb-4 dark:text-black"
           style={{ fontSize: "16px", fontWeight: "600" }}
         >
           PICKUP FROM DOORSTEP
@@ -127,13 +127,12 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
                   </div>
                 ) : (
                   <svg
-                    // onClick={() => handleCheck(item.name)}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-6 h-6 dark:text-black"
                   >
                     <path
                       strokeLinecap="round"
@@ -142,7 +141,10 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
                     />
                   </svg>
                 )}
-                <div style={{ fontSize: "15px", fontWeight: "600" }}>
+                <div
+                  className="dark:text-black"
+                  style={{ fontSize: "15px", fontWeight: "600" }}
+                >
                   {item.name}
                 </div>
               </div>

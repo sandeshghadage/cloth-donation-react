@@ -105,7 +105,7 @@ export default function FlowByteNavBar() {
         <NavbarCollapse
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } sm:block mr-24, bg-white px-4 pb-4`}
+          } sm:block mr-24, bg-white dark:bg-slate-800 px-4 pb-4`}
           style={{
             position: isMenuOpen && "absolute",
             top: "50px",
