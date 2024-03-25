@@ -53,7 +53,6 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
     setCurrStep(1);
   }
   const handleCheck = (clickedItem) => {
-    // console.log(53, clickedItem);
     const updatedData = step2Data.map((item) => {
       if (item.name === clickedItem.name) {
         return {

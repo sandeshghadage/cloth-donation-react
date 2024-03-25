@@ -50,11 +50,9 @@ const Step4 = ({
       ],
     },
   ];
-  // console.log(54, step2Data);
 
   useEffect(() => {
     const found = step2Data.find((item) => item.isChecked == true);
-    console.log(found);
     setSelectedVehicle(found);
   }, []);
 
@@ -88,17 +86,17 @@ const Step4 = ({
           const body = await res.json();
 
           if (res.ok) {
-            alert(`${body.message} 🚀`);
+            toast.success("form submit sucessfull");
+            // alert(`${body.message} 🚀`);
+            router.push("/");
           }
 
           if (res.status === 400) {
             alert(`${body.message} 😢`);
           }
-          // router.push("/");
         } catch (err) {
           console.log("Something went wrong: ", err);
         }
-        toast.success("form submit sucessfull");
       }
     } else {
       toast.error("Please select checkbox and Time slot");

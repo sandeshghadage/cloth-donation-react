@@ -95,19 +95,6 @@ const Form = () => {
     nextStep();
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const formData = {
-  //     location: step1Data.location,
-  //     vehicalType: step2Data.vehicalType,
-  //     cartItems: step3Data.cartItems,
-  //     time: step3Data.time,
-  //     userDetails: step3Data.userDetails,
-  //     note: step3Data.note,
-  //   };
-  //   // onSubmit(formData);
-  // };
-  console.log(114, step4Data);
   const nextStep = () => {
     setCurrStep((prevStep) => prevStep + 1);
   };
@@ -150,7 +137,6 @@ const Form = () => {
       note: value,
     }));
   };
-  console.log(175, currStep);
   return (
     <div className="p-6 flex justify-center ">
       <div
