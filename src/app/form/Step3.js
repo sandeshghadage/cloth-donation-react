@@ -68,7 +68,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
         className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full "
         style={{ width: "100%" }}
       >
-        <div className="flex justify-center items-center md:col-span-6 px-6">
+        <div className="flex justify-center items-center md:col-span-6 sm:px-6">
           <div
             className="flex justify-center border p-4 flex-col"
             style={{
