@@ -7,10 +7,8 @@ import Step3 from "./Step3";
 
 const Form = () => {
   const [currStep, setCurrStep] = useState(1);
-  const [step1Data, setStep1Data] = useState({
-    location: "",
-    error: false,
-  });
+  const [cords, setCords] = useState(null);
+  const [step1Data, setStep1Data] = useState({});
   let var3 = [
     {
       name: "Light Pickup",
@@ -148,6 +146,8 @@ const Form = () => {
             setCurrStep={setCurrStep}
             setStep1Data={setStep1Data}
             step1Data={step1Data}
+            cords={cords}
+            setCords={setCords}
           />
         )}
         {currStep === 2 && (
