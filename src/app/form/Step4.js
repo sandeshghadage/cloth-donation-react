@@ -163,7 +163,7 @@ const Step4 = ({
 
   return (
     <div
-      className="flex flex-col gap-4 w-full px-10"
+      className="flex flex-col gap-4 w-full md:px-10 px-4"
       // style={{ width: "40%" }}
     >
       <ToastContainer />
@@ -238,7 +238,7 @@ const Step4 = ({
           </div>
         </div>
         <div className="w-6/12  flex flex-col justify-center items-end gap-8 max-xl:w-full max-xl:flex-row max-lg:flex-col max-lg:items-center">
-          <div className="w-8/12  flex flex-col justify-center items-center gap-2  rounded-xl shadow-lg shadow-orange-500/50 max-2xl:w-10/12 ">
+          <div className="flex flex-col justify-center items-center gap-2  rounded-xl shadow-lg shadow-orange-500/50">
             <h2 className="py-4 px-6 text-2xl font-normal antialiased ">
               Donar Details
             </h2>
@@ -355,7 +355,7 @@ const Step4 = ({
                   )}
                 </div>
               </div>
-              <div className="w-9/12 h-10 mb-1 ">
+              <div className="w-9/12 h-10 mb-1 w-full px-6">
                 {/* <input type="checkbox" className="border-2 rounded border-gray-400 outline-none outline-0"/> */}
                 <input
                   type="checkbox"
@@ -366,7 +366,7 @@ const Step4 = ({
                 />
                 <label
                   htmlFor="terms"
-                  className="inline-block cursor-pointer relative"
+                  className=" cursor-pointer relative w-full flex items-center"
                 >
                   <span className="relative inline-block w-6 h-6 bg-white border border-gray-400 rounded"></span>
                   <span className="absolute top-1.5 left-1.5 flex items-center justify-center">
@@ -379,9 +379,12 @@ const Step4 = ({
                       <path d="M6 10.75l-3.5-3.5-2.5 2.5 6 6 12-12-2.5-2.5-9.5 9.5z" />
                     </svg>
                   </span>
-                  <span className="ml-3 text-xs">
+                  <div
+                    className="ml-2 text-xs"
+                    style={{ width: "fit-content" }}
+                  >
                     I have read and agree with the Terms of Use.
-                  </span>
+                  </div>
                 </label>
               </div>
             </div>
