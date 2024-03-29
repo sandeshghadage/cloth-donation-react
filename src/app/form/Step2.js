@@ -151,7 +151,7 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
                 style={{
                   fontSize: "13px",
                   fontWeight: "600",
-                  color: "#065f06",
+                  color: "green",
                 }}
               >
                 {item.cost}
@@ -164,14 +164,15 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
       <div className="w-full flex justify-between gap-8">
         <button
           onClick={handleBack}
-          className=" px-4 py-2 bg-gray-400 text-white"
+          className=" px-6 py-2 bg-gray-400 text-white rounded-md"
         >
           Back
         </button>
         <button
+          className="rounded-md"
           style={{
-            backgroundColor: "#f15622",
-            border: "1px solid #f15622",
+            backgroundColor: "#711220",
+            border: "1px solid #711220",
             color: "#fff",
             fontWeight: "600",
             fontSize: "14px",

@@ -202,8 +202,8 @@ const Step4 = ({
                                 className={
                                   isSelectedTimeSlot?.day === day &&
                                   isSelectedTimeSlot?.time === timeSlot
-                                    ? "border-2 w-48 h-10 rounded-xl bg-orange-500 text-white"
-                                    : "border-2 border-gray-500 w-48 h-10 rounded-xl max-xl w-45"
+                                    ? "border-2 w-48 h-10 rounded-md bg-red-900 text-white"
+                                    : "border-2 border-gray-500 w-48 h-10 rounded-md max-xl w-45"
                                 }
                               >
                                 {timeSlot}
@@ -224,9 +224,9 @@ const Step4 = ({
               * We'll do our best to pass along your instructions to our Pickup
               Partner. Compliance isn't guaranteed.
             </span>
-            <div className=" border-orange-500 border-2">
+            <div className=" border-red-900 border-2">
               <textarea
-                className=" border-orange-500 focus:border-blue-500 focus:outline-none p-2 w-full outline-orange-500 outline-offset-1 outline-width-0 dark:text-black"
+                className=" border-red-900 focus:border-blue-500 focus:outline-none p-2 w-full outline-red-900 outline-offset-1 outline-width-0 dark:text-black"
                 placeholder="Enter your comments here..."
                 rows={4}
                 cols={50}
@@ -238,14 +238,14 @@ const Step4 = ({
           </div>
         </div>
         <div className="w-6/12  flex flex-col justify-center items-end gap-8 max-xl:w-full max-xl:flex-row max-lg:flex-col max-lg:items-center">
-          <div className="flex flex-col justify-center items-center gap-2  rounded-xl shadow-lg shadow-orange-500/50">
+          <div className="flex flex-col justify-center items-center gap-2  rounded-md shadow-lg shadow-red-900/50">
             <h2 className="py-4 px-6 text-2xl font-normal antialiased ">
               Donar Details
             </h2>
-            <div className="w-full  flex flex-col justify-center items-center gap-6">
-              <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl ">
+            <div className="w-full  flex flex-col justify-center items-center gap-8">
+              <div className="w-10/12 h-10 border-2 border-red-900 rounded-md">
                 <input
-                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                  className="w-full h-full px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                   placeholder="Name.."
                   name="name"
                   required
@@ -254,14 +254,14 @@ const Step4 = ({
                 />
 
                 {step4Data.errors.name && (
-                  <span className="text-red-500 text-sm pt-2">
+                  <span style={{ color: "#db233e" }} className=" text-xs pt-1">
                     Name field is required
                   </span>
                 )}
               </div>
-              <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
+              <div className="w-10/12 h-10 border-2 border-red-900 rounded-md">
                 <input
-                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                  className="w-full h-full px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                   placeholder="Email"
                   name="email"
                   type="email"
@@ -270,14 +270,14 @@ const Step4 = ({
                   onChange={handleStep4InputChange}
                 />
                 {step4Data.errors.email && (
-                  <span className="text-red-500 text-sm pt-2">
+                  <span style={{ color: "#db233e" }} className=" text-xs pt-1">
                     email field is required and should be valid email
                   </span>
                 )}
               </div>
-              <div className="w-10/12 h-10 border-2 border-orange-500 rounded-xl">
+              <div className="w-10/12 h-10 border-2 border-red-900 rounded-md">
                 <input
-                  className="w-full h-full px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                  className="w-full h-full px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                   placeholder="Mobile No.."
                   name="mobileNumber"
                   type="number"
@@ -286,15 +286,15 @@ const Step4 = ({
                   onChange={handleStep4InputChange}
                 />
                 {step4Data.errors.mobileNumber && (
-                  <span className="text-red-500 text-sm pt-2">
+                  <span style={{ color: "#db233e" }} className=" text-xs pt-1">
                     Mobile number is required & should be 10 digits
                   </span>
                 )}
               </div>
               <div className="w-10/12 h-15  flex flex-row justify-center gap-4 ">
-                <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
+                <div className="w-full h-full   flex flex-col justify-center  rounded-md">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                    className="w-full h-10 border-2 border-red-900 px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                     placeholder="Flat/Door"
                     name="flat"
                     required
@@ -302,14 +302,17 @@ const Step4 = ({
                     onChange={handleStep4InputChange}
                   />
                   {step4Data.errors.flat && (
-                    <span className="text-red-500 text-sm pt-2">
+                    <span
+                      style={{ color: "#db233e" }}
+                      className=" text-xs pt-1"
+                    >
                       Flat field is required
                     </span>
                   )}
                 </div>
-                <div className="w-full h-full  flex flex-col justify-center  rounded-xl">
+                <div className="w-full h-full  flex flex-col justify-center  rounded-md">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                    className="w-full h-10 border-2 border-red-900 px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                     placeholder="Full Address"
                     name="address"
                     required
@@ -317,16 +320,19 @@ const Step4 = ({
                     onChange={handleStep4InputChange}
                   />
                   {step4Data.errors.address && (
-                    <span className="text-red-500 text-sm pt-2">
+                    <span
+                      style={{ color: "#db233e" }}
+                      className=" text-xs pt-1"
+                    >
                       Address field is required
                     </span>
                   )}
                 </div>
               </div>
               <div className="w-10/12 h-15 flex flex-row justify-center gap-4 ">
-                <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
+                <div className="w-full h-full   flex flex-col justify-center  rounded-md">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                    className="w-full h-10 border-2 border-red-900 px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                     placeholder="City"
                     name="city"
                     required
@@ -334,14 +340,17 @@ const Step4 = ({
                     onChange={handleStep4InputChange}
                   />
                   {step4Data.errors.city && (
-                    <span className="text-red-500 text-sm pt-2">
+                    <span
+                      style={{ color: "#db233e" }}
+                      className=" text-xs pt-1"
+                    >
                       city field is required
                     </span>
                   )}
                 </div>
-                <div className="w-full h-full   flex flex-col justify-center  rounded-xl">
+                <div className="w-full h-full   flex flex-col justify-center  rounded-md">
                   <input
-                    className="w-full h-10 border-2 border-orange-500 px-2 rounded-xl outline-orange-500 outline-offset-1 dark:text-black"
+                    className="w-full h-10 border-2 border-red-900 px-2 rounded-md outline-red-900 outline-offset-1 dark:text-black"
                     placeholder="Pincode"
                     name="pincode"
                     required
@@ -372,7 +381,7 @@ const Step4 = ({
                   <span className="absolute top-1.5 left-1.5 flex items-center justify-center">
                     <svg
                       className={`w-4 h-4 fill-current pointer-events-none ${
-                        isChecked ? "block text-orange-500" : "hidden"
+                        isChecked ? "block text-red-900" : "hidden"
                       }`}
                       viewBox="0 0 20 20"
                     >
@@ -433,8 +442,8 @@ const Step4 = ({
         <button
           // disabled={hasErrors()}
           onClick={onSubmit}
-          // className=" px-4 py-2 bg-orange-500 rounded text-white "
-          className={`px-4 py-2 rounded text-white ${"bg-orange-500"}`}
+          // className=" px-4 py-2 bg-red-900 rounded text-white "
+          className={`px-4 py-2 rounded text-white ${"bg-red-900"}`}
         >
           Proceed
         </button>

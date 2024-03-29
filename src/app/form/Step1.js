@@ -88,7 +88,8 @@ const Step1 = ({
             onChange={handleLocationChange}
           /> */}
           <AutoComplete
-            className="w-full h-full px-2 outline-orange-500 outline-offset-1 dark:text-black"
+            style={{ border: "none", outline: "2px solid #711220" }}
+            className="w-full h-full px-2 dark:text-black"
             apiKey={"AIzaSyCrVddibPFddYJu2M77BOwZjzR0IRLHoXA"}
             onPlaceSelected={(place) => {
               const data = {
@@ -102,15 +103,16 @@ const Step1 = ({
           />
 
           {cords == null && (
-            <span className="text-red-500">Location is Required</span>
+            <span style={{ color: "#db233e" }}>Location is Required</span>
           )}
         </div>
 
         <button
           className="p-2 "
           style={{
-            backgroundColor: "#f15622",
-            border: "1px solid #f15622",
+            // backgroundColor: "#711220",
+            backgroundColor: "#711220",
+            border: "1px solid #711220",
             color: "#fff",
             fontWeight: "600",
             fontSize: "12px",

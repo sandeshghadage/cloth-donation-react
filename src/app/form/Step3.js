@@ -98,9 +98,9 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                   </div>
                   {item.qty == 0 ? (
                     <div
-                      className="border flex flex-row justify-center items-center gap-1 bg-white dark:text-black"
+                      className="border flex flex-row justify-center items-center gap-1 bg-white dark:text-black rounded-sm"
                       style={{
-                        border: "2px solid red",
+                        border: "2px solid #711220",
                         height: "30px",
                         width: "100px",
                         cursor: "pointer",
@@ -115,9 +115,9 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                     </div>
                   ) : (
                     <div
-                      className="border flex flex-row justify-center items-center gap-1 bg-white"
+                      className="border flex flex-row justify-center items-center gap-1 bg-white rounded-sm"
                       style={{
-                        border: "2px solid red",
+                        border: "2px solid #711220",
                         height: "30px",
                         width: "100px",
                         cursor: "pointer",
@@ -208,14 +208,15 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
       <div className="w-full flex justify-end px-4 gap-8">
         <button
           onClick={handleBack}
-          className=" px-4 py-2 bg-gray-400 text-white"
+          className=" px-6 py-2 bg-gray-400 text-white rounded-md"
         >
           Back
         </button>
         <button
+          className=" rounded-md"
           style={{
-            backgroundColor: "#f15622",
-            border: "1px solid #f15622",
+            backgroundColor: "#711220",
+            border: "1px solid #711220",
             color: "#fff",
             fontWeight: "600",
             fontSize: "14px",
