@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FlowByteCarousel from "./ui/carousel";
 
+
 export default function Home() {
   return (
     <>

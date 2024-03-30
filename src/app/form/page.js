@@ -4,6 +4,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step4 from "./Step4";
 import Step3 from "./Step3";
+import "../globals.css";
 
 const Form = () => {
   const [currStep, setCurrStep] = useState(1);
@@ -135,44 +136,77 @@ const Form = () => {
       note: value,
     }));
   };
+
+  // const [currIndex, setCurrIndex] = useState(0);
+
+  // const indicators = ["completed", "", "", ""];
+  // const progressWidth = `${(currIndex / (indicators.length - 1)) * 100}%`;
+
+  // function previous() {
+  //   if (currIndex > 0) {
+  //     setCurrIndex(currIndex - 1);
+  //   }
+  // }
+
+  // function next() {
+  //   if (currIndex < indicators.length - 1) {
+  //     setCurrIndex(currIndex + 1);
+  //   }
+  // }
+
+  // const [currStep, setCurrStep] = useState(1);
+
+  // const next = () => {
+  //   setCurrStep((prevStep) => prevStep + 1);
+  // };
+
+  // const prev = () => {
+  //   setCurrStep((prevStep) => prevStep - 1);
+  // };
+
+  const steps = [
+    { component: "/location.png" },
+    { component: "/vehicle.png" },
+    { component: "/carts.png" },
+    { component: "/pickup.png" },
+  ];
+
   return (
     <div className="p-6 flex justify-center ">
       <div
         className="bg-white dark:bg-slate-800 container flex justify-center items-center flex-col rounded"
         style={{ height: "100%" }}
       >
-        <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base px-8 py-4">
-          <li class="flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-            <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-              <svg
-                class="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+        <div
+          className="bg-white dark:bg-slate-800 container  flex justify-center items-center flex-col rounded"
+          style={{ height: "100%" }}
+        >
+          <div className="stepper-wrapper">
+            <div
+              className="bar-complete"
+              style={{
+                width: `${((currStep - 1) / (steps.length - 1)) * 100}%`,
+              }}
+            ></div>
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={`screen-indicator ${
+                  index === currStep - 1 ? "completed" : ""
+                }`}
               >
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-              </svg>
-              Personal <span class="hidden sm:inline-flex sm:ms-2">Info</span>
-            </span>
-          </li>
-          <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-            <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-              <span class="me-2">2</span>
-              Account <span class="hidden sm:inline-flex sm:ms-2">Info</span>
-            </span>
-          </li>
-          <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-            <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-              <span class="me-2">2</span>
-              Account2 <span class="hidden sm:inline-flex sm:ms-2">Info</span>
-            </span>
-          </li>
-          <li class="flex items-center">
-            <span class="me-2">3</span>
-            Confirmation
-          </li>
-        </ol>
+                <img
+                  src={step.component}
+                  style={{
+                    objectFit: "cover",
+                    height: "80%",
+                    width: "80%",
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {currStep === 1 && (
           <Step1

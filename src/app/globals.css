@@ -105,3 +105,107 @@ body {
   top: 0;
   border-radius: 10px;
 }
+
+
+
+
+.containerStepper {
+  text-align: center;
+}
+
+.stepper-wrapper {
+  margin: 50px auto;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.stepper-wrapper::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: lightgray;
+  position: absolute;
+  z-index: 99;
+}
+
+.bar-complete {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgb(78, 196, 243);
+  position: absolute;
+  z-index: 99;
+  transition: width 1s;
+  border:"2px solid red";
+}
+
+.screen-indicator {
+  border-radius: 50%;
+  border: 3px solid lightgrey;
+  background-color: white;
+ 
+  color: gray;
+  transition: border-color color;
+  transition-duration: 0.7s;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.completed {
+  border-color: rgb(78, 196, 243);
+  color: rgb(78, 196, 243);
+}
+
+.control-btn {
+  background-color: rgb(238, 238, 238);
+  padding: 5px 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.control-btn:disabled {
+  cursor: not-allowed;
+}
+
+.control-btn:not(:disabled):hover {
+  background-color: lightgray;
+}
+
+
+@media screen and (max-width: 1019px) {
+  .stepper-wrapper {
+    width: 600px; 
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .stepper-wrapper {
+    width: 500px; 
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .stepper-wrapper {
+    width: 500px; 
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .stepper-wrapper {
+    width: 350px; 
+  }
+}
+
+@media screen and (max-width: 421px) {
+  .stepper-wrapper {
+    width: 250px; 
+  }
+}

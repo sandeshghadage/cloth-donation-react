@@ -71,7 +71,7 @@ const Step1 = ({
   return (
     <div
       className="flex justify-center items-center flex-col gap-4 p-3 "
-      style={{ height: "80vh" }}
+      style={{ height: "70vh" }}
     >
       <h3 className="text-center" style={{ fontSize: "24px" }}>
         HELP US WITH YOUR EXACT LOCATION
