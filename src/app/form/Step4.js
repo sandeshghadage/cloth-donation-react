@@ -16,6 +16,7 @@ const Step4 = ({
   step1Data,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [isSelectedTimeSlot, setSelectedTimeSlot] = useState({
     day: "",
@@ -75,6 +76,7 @@ const Step4 = ({
         toast.error("Please check all fields should be filled");
       } else {
         try {
+          setLoading(true);
           const res = await fetch("/api", {
             method: "POST",
             headers: {
@@ -87,14 +89,17 @@ const Step4 = ({
 
           if (res.ok) {
             toast.success("form submit sucessfull");
+            setLoading(false);
             // alert(`${body.message} 🚀`);
             router.push("/");
           }
 
           if (res.status === 400) {
             alert(`${body.message} 😢`);
+            setLoading(false);
           }
         } catch (err) {
+          setLoading(false);
           console.log("Something went wrong: ", err);
         }
       }
@@ -440,7 +445,8 @@ const Step4 = ({
           Back
         </button>
         <button
-          // disabled={hasErrors()}
+          style={{ opacity: loading ? 0.5 : 1 }}
+          disabled={loading}
           onClick={onSubmit}
           // className=" px-4 py-2 bg-red-900 rounded text-white "
           className={`px-4 py-2 rounded text-white ${"bg-red-900"}`}

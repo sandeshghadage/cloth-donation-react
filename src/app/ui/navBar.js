@@ -14,6 +14,7 @@ import {
 } from "flowbite-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FlowByteNavBar() {
   const pathname = usePathname();
@@ -55,9 +56,12 @@ export default function FlowByteNavBar() {
   return (
     <Navbar fluid rounded>
       <NavbarBrand href="#">
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        {/* <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Cloth Donation
-        </span>
+        </span> */}
+        <div className="p-1">
+          <Image src={"/logo-old-cloth-3.png"} height={80} width={140} />
+        </div>
       </NavbarBrand>
       <div>
         <div className="flex sm:order-2 sm:hidden">
@@ -132,7 +136,7 @@ export default function FlowByteNavBar() {
               About
             </Link>
 
-            <Link
+            {/* <Link
               onClick={width < 640 && toggleMenu}
               style={{ width: "100%" }}
               href="/volunteer"
@@ -141,7 +145,7 @@ export default function FlowByteNavBar() {
               } p-1`}
             >
               Volunteer
-            </Link>
+            </Link> */}
             <Link
               onClick={width < 640 && toggleMenu}
               style={{ width: "100%" }}
