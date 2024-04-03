@@ -112,8 +112,9 @@ export default function FlowByteNavBar() {
           } sm:block mr-24, bg-white dark:bg-slate-800 px-4 pb-4`}
           style={{
             position: isMenuOpen && "absolute",
-            top: "50px",
+            top: "80px",
             left: "00vw",
+            zIndex: 200,
           }}
         >
           <ul className="flex flex-col sm:flex-row sm:space-x-16 sm:space-y-0 space-y-3">
