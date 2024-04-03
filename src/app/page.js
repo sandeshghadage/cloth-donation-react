@@ -7,7 +7,6 @@
 import Link from "next/link";
 import FlowByteCarousel from "./ui/carousel";
 import Image from "next/image";
-import OwlCarousel from "./ui/owlcarousel";
 
 export default function Home() {
   const sliderOptions = {
