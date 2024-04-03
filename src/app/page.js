@@ -6,7 +6,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import FlowByteCarousel from "./ui/carousel";
-
+import { url } from "inspector";
 
 export default function Home() {
   return (
@@ -38,6 +38,128 @@ export default function Home() {
       <div className="w-full ml-auto bg-white mr-auto">
         <div className="flex justify-center">
           <Image src="/timeline.png" alt="My SVG" width={400} height={500} />
+        </div>
+      </div>
+      <div className="w-full min-h-52 ">
+        <div
+          className="w-full min-h-52 "
+          style={{
+            backgroundImage: 'url("/bg.jpg")',
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className=" w-full  md:py-16 h-full xl:py-24  ">
+            <div className=" w-full h-full xl:px-16 ">
+              <div className="grid grid-cols-1 gap-0 md:grid-cols-3 py-8">
+                {[1, 2, 3].map((item, index) => {
+                  return (
+                    <div className=" bg-transparent  px-8">
+                      <div className=" w-full h-full bg-transparent xl:pt-14 xl:pb-8 xl:px-6 md:pt-12 md:pb-6 xl:px-4  ">
+                        <div
+                          className="w-full h-full xl:px-6 md:px-6 "
+                          style={{
+                            backgroundColor:
+                              index === 0
+                                ? "#121111"
+                                : index === 1
+                                ? " #2123bc"
+                                : index === 2
+                                ? "#e86053"
+                                : "",
+                            opacity: 0.87,
+                          }}
+                        >
+                          <div
+                            className=""
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              padding: "50px 30px",
+                              justifyContent: "space-between",
+                              gap: "30px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  border:
+                                    index === 2
+                                      ? "2px solid white"
+                                      : "2px solid #ea5f52",
+                                  width: "20px",
+                                }}
+                              ></div>
+                            </div>
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                                alignItems: "left",
+                              }}
+                            >
+                              <h2
+                                style={{
+                                  fontSize: "57px",
+                                  color: "white",
+                                  fontWeight: "700",
+                                  fontStyle: "normal",
+                                }}
+                              >
+                                0{index + 1}
+                              </h2>
+                              <h5
+                                style={{
+                                  fontSize: "26px",
+                                  color:
+                                    index === 0
+                                      ? "#ff6f61"
+                                      : index === 1
+                                      ? "#ff6f61"
+                                      : "#2123bc",
+                                  fontWeight: "400",
+                                }}
+
+                                // ont-size: 26px;
+                                // font-weight: 400;
+                                // letter-spacing: 0px;
+                                // text-transform: none;
+                                // color: #ff6f61;
+                              >
+                                We seek to drive change on large scale
+                              </h5>
+                            </div>
+                            <div>
+                              <span
+                                style={{
+                                  fontSize: "16px",
+                                  color: "white",
+                                  lineHeight: "1.7px",
+                                  // font-size: 16px;
+                                  // line-height: 1.7;
+                                }}
+                              >
+                                Towards the end of the 19th century, with the
+                                advent of the New Liberalism and the innovative
+                                work of Charles
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

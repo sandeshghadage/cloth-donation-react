@@ -164,11 +164,90 @@ const Form = () => {
   //   setCurrStep((prevStep) => prevStep - 1);
   // };
 
+  // const steps = [
+  //   { component: "/location.png" },
+  //   { component: "/vehicle.png" },
+  //   { component: "/carts.png" },
+  //   { component: "/pickup.png" },
+  // ];
+
   const steps = [
-    { component: "/location.png" },
-    { component: "/vehicle.png" },
-    { component: "/carts.png" },
-    { component: "/pickup.png" },
+    {
+      component: (
+        <svg
+          class="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#392993"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      ),
+    },
+    {
+      component: (
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#392993"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 4a2 2 0 0 0-2 2v9a1 1 0 0 0 1 1h.535a3.5 3.5 0 1 0 6.93 0h3.07a3.5 3.5 0 1 0 6.93 0H21a1 1 0 0 0 1-1v-4a.999.999 0 0 0-.106-.447l-2-4A1 1 0 0 0 19 6h-5a2 2 0 0 0-2-2H4Zm14.192 11.59.016.02a1.5 1.5 0 1 1-.016-.021Zm-10 0 .016.02a1.5 1.5 0 1 1-.016-.021Zm5.806-5.572v-2.02h4.396l1 2.02h-5.396Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      ),
+    },
+    {
+      component: (
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#392993"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 4a1 1 0 0 1 1-1h1.5a1 1 0 0 1 .979.796L7.939 6H19a1 1 0 0 1 .979 1.204l-1.25 6a1 1 0 0 1-.979.796H9.605l.208 1H17a3 3 0 1 1-2.83 2h-2.34a3 3 0 1 1-4.009-1.76L5.686 5H5a1 1 0 0 1-1-1Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      ),
+    },
+    {
+      component: (
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#392993"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7 2a2 2 0 0 0-2 2v1a1 1 0 0 0 0 2v1a1 1 0 0 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm3 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm-1 7a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3 1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -195,14 +274,15 @@ const Form = () => {
                   index === currStep - 1 ? "completed" : ""
                 }`}
               >
-                <img
+                {/* <img
                   src={step.component}
                   style={{
                     objectFit: "cover",
                     height: "80%",
                     width: "80%",
                   }}
-                />
+                /> */}
+                {step.component}
               </div>
             ))}
           </div>

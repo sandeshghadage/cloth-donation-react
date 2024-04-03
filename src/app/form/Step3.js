@@ -100,7 +100,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                     <div
                       className="border flex flex-row justify-center items-center gap-1 bg-white dark:text-black rounded-sm"
                       style={{
-                        border: "2px solid #711220",
+                        border: "2px solid #392993",
                         height: "30px",
                         width: "100px",
                         cursor: "pointer",
@@ -117,7 +117,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
                     <div
                       className="border flex flex-row justify-center items-center gap-1 bg-white rounded-sm"
                       style={{
-                        border: "2px solid #711220",
+                        border: "2px solid #392993",
                         height: "30px",
                         width: "100px",
                         cursor: "pointer",
@@ -215,8 +215,8 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
         <button
           className=" rounded-md"
           style={{
-            backgroundColor: "#711220",
-            border: "1px solid #711220",
+            backgroundColor: "#392993",
+            border: "1px solid #392993",
             color: "#fff",
             fontWeight: "600",
             fontSize: "14px",

@@ -88,7 +88,7 @@ const Step1 = ({
             onChange={handleLocationChange}
           /> */}
           <AutoComplete
-            style={{ border: "none", outline: "2px solid #711220" }}
+            style={{ border: "none", outline: "2px solid #392993" }}
             className="w-full h-full px-2 dark:text-black"
             apiKey={"AIzaSyCrVddibPFddYJu2M77BOwZjzR0IRLHoXA"}
             onPlaceSelected={(place) => {
@@ -110,9 +110,9 @@ const Step1 = ({
         <button
           className="p-2 "
           style={{
-            // backgroundColor: "#711220",
-            backgroundColor: "#711220",
-            border: "1px solid #711220",
+            // backgroundColor: "#392993",
+            backgroundColor: "#392993",
+            border: "1px solid #392993",
             color: "#fff",
             fontWeight: "600",
             fontSize: "12px",

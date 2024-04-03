@@ -171,8 +171,8 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
         <button
           className="rounded-md"
           style={{
-            backgroundColor: "#711220",
-            border: "1px solid #711220",
+            backgroundColor: "#392993",
+            border: "1px solid #392993",
             color: "#fff",
             fontWeight: "600",
             fontSize: "14px",

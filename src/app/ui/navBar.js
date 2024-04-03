@@ -132,7 +132,7 @@ export default function FlowByteNavBar() {
               About
             </Link>
 
-            <Link
+            {/* <Link
               onClick={width < 640 && toggleMenu}
               style={{ width: "100%" }}
               href="/volunteer"
@@ -141,7 +141,7 @@ export default function FlowByteNavBar() {
               } p-1`}
             >
               Volunteer
-            </Link>
+            </Link> */}
             <Link
               onClick={width < 640 && toggleMenu}
               style={{ width: "100%" }}
