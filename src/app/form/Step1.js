@@ -27,6 +27,8 @@ const Step1 = ({
   step1Data,
   setCords,
   cords,
+  setLocationError,
+  locationError,
 }) => {
   const mapKey = process.env.REACT_APP_API_KEY;
 
@@ -56,6 +58,7 @@ const Step1 = ({
 
   const handleProceed = () => {
     if (!cords) {
+      setLocationError(true);
       // Check if location is empty
       console.log("Location is empty");
       // setStep1Data((prevData) => ({
@@ -70,7 +73,7 @@ const Step1 = ({
 
   return (
     <div
-      className="flex justify-center items-center flex-col gap-4 p-3 "
+      className="flex items-center flex-col gap-4 p-3  pt-5 md:pt-20"
       style={{ height: "70vh" }}
     >
       <h3 className="text-center" style={{ fontSize: "24px" }}>
@@ -102,7 +105,7 @@ const Step1 = ({
             }}
           />
 
-          {cords == null && (
+          {cords == null && locationError && (
             <span style={{ color: "#db233e" }}>Location is Required</span>
           )}
         </div>

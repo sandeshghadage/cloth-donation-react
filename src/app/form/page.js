@@ -9,6 +9,7 @@ import "../globals.css";
 const Form = () => {
   const [currStep, setCurrStep] = useState(1);
   const [cords, setCords] = useState(null);
+  const [locationError, setLocationError] = useState(false);
   const [step1Data, setStep1Data] = useState({});
   let var3 = [
     {
@@ -175,7 +176,7 @@ const Form = () => {
     {
       component: (
         <svg
-          class="w-6 h-6 text-gray-800 dark:text-white"
+          class="w-8 h-8 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -194,7 +195,7 @@ const Form = () => {
     {
       component: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white"
+          className="w-8 h-8 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -213,7 +214,7 @@ const Form = () => {
     {
       component: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white"
+          className="w-8 h-8 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -232,7 +233,7 @@ const Form = () => {
     {
       component: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white"
+          className="w-8 h-8 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -295,6 +296,8 @@ const Form = () => {
             step1Data={step1Data}
             cords={cords}
             setCords={setCords}
+            setLocationError={setLocationError}
+            locationError={locationError}
           />
         )}
         {currStep === 2 && (
