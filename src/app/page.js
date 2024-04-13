@@ -119,7 +119,7 @@ export default function Home() {
             left: "0",
             color: "white",
             backgroundColor: "#000",
-            opacity: 0.9,
+            opacity: 0.4,
           }}
         >
           <div

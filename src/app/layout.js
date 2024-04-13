@@ -7,7 +7,7 @@ import { ThemeModeScript } from "flowbite-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Old Cloth Foundation",
+  title: "Old Cloth Foundation: Donate your old cloths",
   description: "Old Cloth Foundation",
 };
 

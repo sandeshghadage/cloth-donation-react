@@ -78,9 +78,7 @@ export default function Donation() {
             />
             <div className="flex flex-col justify-center">
               <div className="text-white text-lg">Account Details </div>
-              <div className="text-white">
-                Account Name : Old Cloth Foundation
-              </div>
+              <div className="text-white">Account Name : dation</div>
               <div className="text-white">Account Number : 765466366424 </div>
               <div className="text-white">IFSC Code : SBI04567S7 </div>
             </div>
