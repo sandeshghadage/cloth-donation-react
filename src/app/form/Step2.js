@@ -96,6 +96,72 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
           PICKUP FROM DOORSTEP
         </div>
         <div className="flex flex-col gap-3">
+          <div>Pick Up (Comming Soon)</div>
+          <div
+            style={{
+              backgroundColor: "#e6e4e4",
+              cursor: "pointer",
+              border: "1px solid #cccbcb",
+              display: "flex",
+              justifyContent: "space-between",
+              opacity: 0.5,
+            }}
+            className="p-4"
+            // onClick={() => handleCheck(item)}
+          >
+            <div className="flex items-center gap-2">
+              {false ? (
+                <div
+                  // onClick={() => handleCheck(item.name)}
+                  style={{ width: "22px", height: "22px" }}
+                >
+                  <img
+                    src="/check2.jpeg"
+                    style={{
+                      objectFit: "cover",
+                      height: "100%",
+                      width: "100%",
+                    }}
+                  />
+                </div>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 dark:text-black"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
+                  />
+                </svg>
+              )}
+              <div
+                className="dark:text-black stroke-black"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: "600",
+                  textDecoration: "line-through",
+                }}
+              >
+                Light Pickup
+              </div>
+            </div>
+            <div
+              style={{
+                fontSize: "13px",
+                fontWeight: "600",
+                color: "green",
+              }}
+            >
+              {"FREE"}
+            </div>
+          </div>
+          <div>Self Drop</div>
           {step2Data?.map((item, index) => (
             <div
               key={index}

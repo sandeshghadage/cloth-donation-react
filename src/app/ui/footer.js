@@ -15,6 +15,7 @@ import {
   BsInstagram,
   BsTwitter,
 } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import "../globals.css";
 
@@ -40,6 +41,11 @@ export default function FlowByteFooter() {
                 </span>
                 <div className="grid grid-cols-7 gap-0 social-icons md:grid-cols-5">
                   <FooterIcon
+                    href="https://www.linkedin.com/company/100885923/admin/feed/posts/"
+                    icon={FaLinkedin}
+                    style={{ color: "#392993", height: "20px", width: "20px" }}
+                  />
+                  <FooterIcon
                     href="#"
                     icon={BsFacebook}
                     style={{ color: "#392993", height: "20px", width: "20px" }}
@@ -52,16 +58,6 @@ export default function FlowByteFooter() {
                   <FooterIcon
                     href="#"
                     icon={BsTwitter}
-                    style={{ color: "#392993" }}
-                  />
-                  <FooterIcon
-                    href="#"
-                    icon={BsGithub}
-                    style={{ color: "#392993" }}
-                  />
-                  <FooterIcon
-                    href="#"
-                    icon={BsDribbble}
                     style={{ color: "#392993" }}
                   />
                 </div>
@@ -99,7 +95,7 @@ export default function FlowByteFooter() {
                     <path d="m22 8.053-8.784 6.683a1.978 1.978 0 0 1-2.44-.031L2.02 7.693a1.091 1.091 0 0 0-.019.199v11.065C2 20.637 3.343 22 5 22h14c1.657 0 3-1.362 3-3.043V8.053Z" />
                   </svg>
 
-                  <p> support@ocf.com</p>
+                  <p>agarwalritesh11@gmail.com</p>
                 </span>
                 <span className=" flex flex-row gap-2">
                   <svg
@@ -114,7 +110,7 @@ export default function FlowByteFooter() {
                     <path d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z" />
                   </svg>
 
-                  <p>1234567891</p>
+                  <p>+91 99535 93261</p>
                 </span>
               </div>
             </div>

@@ -125,21 +125,16 @@ export default function Home() {
           </div>
           <div className="flex w-full justify-center gap-3 p-3">
             <Link href="/form" class="button-85" role="button">
-              Schedule Pickup
+              Schedule Pickup / Drop
             </Link>
           </div>
         </div>
       </div>
-      {/* <div className="w-full ml-auto bg-white mr-auto">
-        <div className="flex justify-center">
-          <Image src="/timeline.png" alt="My SVG" width={400} height={500} />
-        </div>
-      </div> */}
 
       {/* Our Story */}
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-0 border">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-0 border">
         <div className="flex justify-center">
-          <img src="/vol-1.jpg" alt="gallary5" width={"100%"} />
+          <img src="/ourStory1.jpg" alt="gallary5" width={"100%"} />
         </div>
         <div
           className="flex flex-col items-start p-16 gap-4"
@@ -179,7 +174,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="md:flex justify-center hidden">
-          <img src="/vol-4.png" alt="gallary5" width={"100%"} />
+          <img src="/ourStory2.jpg" alt="gallary5" width={"100%"} />
         </div>
       </div>
       {/* test */}
@@ -269,12 +264,6 @@ export default function Home() {
                                       : "#2123bc",
                                   fontWeight: "400",
                                 }}
-
-                                // ont-size: 26px;
-                                // font-weight: 400;
-                                // letter-spacing: 0px;
-                                // text-transform: none;
-                                // color: #ff6f61;
                               >
                                 {item.slogan}
                               </h5>
@@ -285,8 +274,6 @@ export default function Home() {
                                   fontSize: "16px",
                                   color: "white",
                                   lineHeight: "1.7px",
-                                  // font-size: 16px;
-                                  // line-height: 1.7;
                                 }}
                               >
                                 {item.content}
@@ -353,7 +340,7 @@ export default function Home() {
         <div className="grid sm:grid-cols-4 grid-cols-1 gap-0">
           <div className="flex justify-center">
             <Image
-              src="/gallary-image3.jpg"
+              src="/gallery-10.jpg"
               alt="gallary5"
               width={400}
               height={500}
@@ -361,7 +348,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/gallary-image5.jpg"
+              src="/gallery-9.jpg"
               alt="gallary5"
               width={400}
               height={500}
@@ -369,7 +356,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/gallary-6.jpg"
+              src="/gallery-11.jpg"
               alt="gallary5"
               width={400}
               height={500}
@@ -377,7 +364,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/gallary-7.jpg"
+              src="/gallery-12.jpg"
               alt="gallary5"
               width={400}
               height={500}

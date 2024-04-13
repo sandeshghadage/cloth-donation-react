@@ -167,7 +167,7 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
           </div>
         </div>
         <div className="flex justify-center items-center md:col-span-6 px-6 flex-col">
-          <div className="flex my-6 w-full flex justify-center items-center ">
+          {/* <div className="flex my-6 w-full flex justify-center items-center ">
             <Image src="/bag2.svg" alt="My SVG" width={100} height={100} />
             <div className="flex flex-col">
               <div className="text-3xl font-bold" style={{ color: "#008000" }}>
@@ -175,9 +175,9 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
               </div>
               <div className=" ">Capacity Used.</div>
             </div>
-          </div>
+          </div> */}
 
-          <div style={{ borderBottom: "1px solid grey", width: "100%" }} />
+          {/* <div style={{ borderBottom: "1px solid grey", width: "100%" }} /> */}
           <div className="w-full flex justify-start mt-3">NOTE:</div>
           <ul className="list-disc w-full ">
             <li className="text-sm">

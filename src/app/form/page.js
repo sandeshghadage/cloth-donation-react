@@ -13,7 +13,7 @@ const Form = () => {
   const [step1Data, setStep1Data] = useState({});
   let var3 = [
     {
-      name: "Light Pickup",
+      name: "Self Drop (Gurgaon)",
       cost: "FREE",
       isChecked: false,
     },
