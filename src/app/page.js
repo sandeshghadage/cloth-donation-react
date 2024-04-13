@@ -95,13 +95,18 @@ export default function Home() {
   return (
     <>
       <div
-        className=" border"
         style={{ height: "100vh", overflow: "hidden", position: "relative" }}
       >
         {/* <FlowByteCarousel /> */}
+
         <img
-          src="/herobg-1.webp"
-          style={{ objectFit: "cover", height: "100%", width: "100%" }}
+          src="/heroImg2.png"
+          style={{
+            objectFit: "cover",
+            height: "100%",
+            width: "100%",
+            // opacity: 0.2,
+          }}
         />
         <div
           className="flex flex-col justify-center items-center gap-6 px-8 text-center"
@@ -113,10 +118,22 @@ export default function Home() {
             top: "0",
             left: "0",
             color: "white",
-            // backgroundColor: "#000",
-            // opacity: 0.0,
+            backgroundColor: "#000",
+            opacity: 0.9,
           }}
         >
+          <div
+            className="bg-orange-500 p-2 flex justify-center"
+            style={{
+              position: "absolute",
+              top: "0px",
+              width: "100vw",
+            }}
+          >
+            <div className="text-white font-bold">
+              Donation service is only available in Delhi NCR & Jaipur
+            </div>
+          </div>
           <div className="text-4xl md:text-6xl font-bold">
             Share. Care. Wear.
           </div>
@@ -132,7 +149,7 @@ export default function Home() {
       </div>
 
       {/* Our Story */}
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-0 border">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-0">
         <div className="flex justify-center">
           <img src="/ourStory1.jpg" alt="gallary5" width={"100%"} />
         </div>
@@ -177,8 +194,8 @@ export default function Home() {
           <img src="/ourStory2.jpg" alt="gallary5" width={"100%"} />
         </div>
       </div>
-      {/* test */}
-      <div className="w-full min-h-52 ">
+      {/* Mission Steps 1, 2, 3 */}
+      {/* <div className="w-full min-h-52 ">
         <div
           className="w-full min-h-52 "
           style={{
@@ -289,6 +306,34 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div> */}
+      <div
+        className="md:flex hidden"
+        style={{
+          backgroundColor: "white",
+          paddingTop: "10vh",
+        }}
+      >
+        <img
+          src="/Road-map-vertical.png"
+          alt="gallary5"
+          width={"100%"}
+          height={"100%"}
+        />
+      </div>
+      <div
+        className="flex md:hidden"
+        style={{
+          backgroundColor: "white",
+          paddingTop: "10vh",
+        }}
+      >
+        <img
+          src="/Road-map-horizontal.png"
+          alt="gallary5"
+          width={"100%"}
+          height={"100%"}
+        />
       </div>
       {/* Testimonial */}
       <div>

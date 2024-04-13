@@ -20,16 +20,13 @@ export default function AboutUS() {
             opacity: 0.8,
           }}
         ></div>
-
-        {/* Text */}
         <div className="relative flex flex-col justify-center items-center w-full z-10">
-          <span className="text-6xl md:text-7xl xl:text-8xl text-white">
+          <span className="text-4xl md:text-7xl xl:text-8xl text-white">
             HOW WE WORK
           </span>
         </div>
       </div>
-
-      <div
+      {/* <div
         className="relative w-full min-h-full flex flex-col"
         style={{
           backgroundImage: 'url("/bgabout.jpg")',
@@ -39,13 +36,11 @@ export default function AboutUS() {
           minHeight: "80vh",
         }}
       >
-        {/* Overlay with faded color */}
         <div
           className="absolute inset-0 bg-white bg-opacity-80"
           style={{ zIndex: 0 }}
         ></div>
 
-        {/* Content */}
         <div className="w-full md:py-16 min-h-full xl:py-24 flex flex-col relative z-10">
           <div className="w-full xl:px-16">
             <div className="flex flex-wrap">
@@ -116,6 +111,35 @@ export default function AboutUS() {
             </div>
           </div>
         </div>
+      </div> */}
+      <div
+        className="md:flex hidden"
+        style={{
+          backgroundColor: "white",
+          paddingTop: "10vh",
+          paddingBottom: "10vh",
+        }}
+      >
+        <img
+          src="/Road-map-vertical.png"
+          alt="gallary5"
+          width={"100%"}
+          height={"100%"}
+        />
+      </div>
+      <div
+        className="flex md:hidden"
+        style={{
+          backgroundColor: "white",
+          paddingTop: "10vh",
+        }}
+      >
+        <img
+          src="/Road-map-horizontal.png"
+          alt="gallary5"
+          width={"100%"}
+          height={"100%"}
+        />
       </div>
       <div className="grid grid-cols-1 gap-0 md:grid-cols-2   w-full ">
         <div
@@ -138,7 +162,7 @@ export default function AboutUS() {
             }}
           ></div>
 
-          <div className=" absolute inset-0 flex flex-col justify-center items-center w-full px-20 py-20 ">
+          <div className=" absolute inset-0 flex flex-col justify-center items-center w-full md:px-16 px-8 py-20 ">
             <p className="mb-3 font-normal text-white dark:text-white text-xl">
               Share At Door Step makes it super easy for you to make non-cash
               donations. Don’t we all have a lot of clothes, books, and other

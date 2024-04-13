@@ -55,7 +55,7 @@ export default function FlowByteNavBar() {
 
   return (
     <Navbar fluid rounded>
-      <NavbarBrand href="#">
+      <NavbarBrand href="/">
         {/* <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Cloth Donation
         </span> */}
@@ -125,6 +125,16 @@ export default function FlowByteNavBar() {
               className={`link ${pathname === "/" ? "text-blue-400" : ""} p-1`}
             >
               Home
+            </Link>
+            <Link
+              onClick={width < 640 && toggleMenu}
+              style={{ width: "100%" }}
+              href="/donation"
+              className={`link ${
+                pathname === "/donation" ? "text-blue-400" : ""
+              } p-1`}
+            >
+              Donation
             </Link>
             <Link
               onClick={width < 640 && toggleMenu}
