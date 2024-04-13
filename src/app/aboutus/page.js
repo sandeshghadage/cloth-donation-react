@@ -178,17 +178,17 @@ export default function AboutUS() {
           <div
             className="absolute inset-0 bg-white bg-opacity-80"
             style={{
-              zIndex: 0,
+              zIndex: -5,
               backgroundColor: "#392993",
               opacity: 0.8,
             }}
           ></div>
-          <div className="flex flex-col  w-full h-full justify-center items-center px-10 py-10">
-            <h3 className="text-3xl font-bold dark:text-white ml-6">
+          <div className="flex flex-col  w-full h-full justify-center items-center px-10 py-10 text-white">
+            <h3 className="text-3xl font-bold ml-6 ">
               How to Schedule a pickup?
             </h3>
 
-            <ul className="space-y-4 text-black  list-inside dark:text-black">
+            <ul className="space-y-4 list-inside">
               <li>
                 <ol className="ps-5 my-4 mb-24 space-y-1 list-decimal list-inside ">
                   <li className="text-xl">

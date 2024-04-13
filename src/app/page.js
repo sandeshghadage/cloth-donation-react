@@ -118,12 +118,14 @@ export default function Home() {
             top: "0",
             left: "0",
             color: "white",
-            backgroundColor: "#000",
-            opacity: 0.4,
+            // backgroundColor: "#000",
+            // opacity: 0.4,
+            backgroundImage:
+              "linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 3.8) 100%)",
           }}
         >
           <div
-            className="bg-orange-500 p-2 flex justify-center"
+            className="bg-[#392993] p-2 flex justify-center"
             style={{
               position: "absolute",
               top: "0px",
@@ -137,6 +139,9 @@ export default function Home() {
           <div className="text-4xl md:text-6xl font-bold">
             Share. Care. Wear.
           </div>
+          {/* <div class="text-4xl md:text-6xl font-bold [text-shadow: 2px 2px 4px rgba(0,0,0,0.5)]">
+            Share. Care. Wear.
+          </div> */}
           <div className="text-xl md:text-2xl font-medium">
             Transforming lives, one garment at a time. Join us today!
           </div>
@@ -147,7 +152,41 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      <div
+        className="md:flex hidden"
+        style={{
+          backgroundColor: "white",
+          paddingTop: "10vh",
+          paddingBottom: "10vh",
+        }}
+      >
+        <img
+          src="/Road-map-vertical.png"
+          alt="gallary5"
+          width={"100%"}
+          height={"100%"}
+        />
+      </div>
+      <div
+        className="flex md:hidden"
+        style={{
+          backgroundColor: "white",
+          paddingTop: "10vh",
+        }}
+      >
+        <img
+          src="/Road-map-horizontal.png"
+          alt="gallary5"
+          width={"100%"}
+          height={"100%"}
+        />
+      </div>
+      {/* <div
+        className="bg-white h-36 flex justify-center items-center text-4xl font-bold"
+        style={{ color: "#292929" }}
+      >
+        Our Story
+      </div> */}
       {/* Our Story */}
       <div className="grid md:grid-cols-2 grid-cols-1 gap-0">
         <div className="flex justify-center">
@@ -155,7 +194,7 @@ export default function Home() {
         </div>
         <div
           className="flex flex-col items-start p-16 gap-4"
-          style={{ backgroundColor: "#1d1d1d" }}
+          style={{ backgroundColor: "#392993" }}
         >
           <div className="text-xl font-bold text-orange-500">Our Story __</div>
           <div className="text-2xl font-medium text-white">Who are we?</div>
@@ -168,12 +207,12 @@ export default function Home() {
           </div>
           <Link
             href={"/aboutus"}
-            className="bg-blue-800 text-white px-6 py-3 text-xs font-bold"
+            className="bg-white text-[#392993] px-6 py-3 text-xs font-bold"
           >
             LEARN MORE
           </Link>
         </div>
-        <div className="flex flex-col items-start p-16 gap-4 bg-blue-800">
+        <div className="flex flex-col items-start p-16 gap-4 bg-[#392993]">
           <div className="text-xl font-bold text-orange-500">Our Story __</div>
           <div className="text-2xl font-medium text-white">Why Choose Us?</div>
           <div className="text-base font-medium text-white">
@@ -185,7 +224,7 @@ export default function Home() {
           </div>
           <Link
             href={"/aboutus"}
-            className="bg-white text-blue-800 px-6 py-3 text-xs font-bold"
+            className="bg-white text-[#392993] px-6 py-3 text-xs font-bold"
           >
             LEARN MORE
           </Link>
@@ -307,34 +346,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div
-        className="md:flex hidden"
-        style={{
-          backgroundColor: "white",
-          paddingTop: "10vh",
-        }}
-      >
-        <img
-          src="/Road-map-vertical.png"
-          alt="gallary5"
-          width={"100%"}
-          height={"100%"}
-        />
-      </div>
-      <div
-        className="flex md:hidden"
-        style={{
-          backgroundColor: "white",
-          paddingTop: "10vh",
-        }}
-      >
-        <img
-          src="/Road-map-horizontal.png"
-          alt="gallary5"
-          width={"100%"}
-          height={"100%"}
-        />
-      </div>
+
       {/* Testimonial */}
       <div>
         <div

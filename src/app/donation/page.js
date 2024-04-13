@@ -52,7 +52,7 @@ export default function Donation() {
         </div>
         <div
           className="flex flex-col items-start p-16 gap-4 pr-0"
-          style={{ backgroundColor: "#1d1d1d" }}
+          //   style={{ backgroundColor: "#1d1d1d" }}
         >
           {/* <div className="text-xl font-bold text-orange-500">Our Story __</div>
           <div className="text-2xl font-medium text-white">Who are we?</div>
@@ -77,10 +77,10 @@ export default function Donation() {
               style={{ borderRadius: "12px" }}
             />
             <div className="flex flex-col justify-center">
-              <div className="text-white text-lg">Account Details </div>
-              <div className="text-white">Account Name : dation</div>
-              <div className="text-white">Account Number : 765466366424 </div>
-              <div className="text-white">IFSC Code : SBI04567S7 </div>
+              <div className=" text-lg font-bold">Account Details </div>
+              <div className="">Account Name : Old Cloth Foundation</div>
+              <div>Account Number : 765466366424 </div>
+              <div>IFSC Code : SBI04567S7 </div>
             </div>
           </div>
         </div>

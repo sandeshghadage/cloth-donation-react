@@ -122,7 +122,7 @@ export default function FlowByteNavBar() {
               onClick={width < 640 && toggleMenu}
               style={{ width: "100%" }}
               href="/"
-              className={`link ${pathname === "/" ? "text-blue-400" : ""} p-1`}
+              className={`link ${pathname === "/" ? "text-[#392993]" : ""} p-1`}
             >
               Home
             </Link>
@@ -131,7 +131,7 @@ export default function FlowByteNavBar() {
               style={{ width: "100%" }}
               href="/donation"
               className={`link ${
-                pathname === "/donation" ? "text-blue-400" : ""
+                pathname === "/donation" ? "text-[#392993]" : ""
               } p-1`}
             >
               Donation
@@ -141,7 +141,7 @@ export default function FlowByteNavBar() {
               style={{ width: "100%" }}
               href="/aboutus"
               className={`link ${
-                pathname === "/aboutus" ? "text-blue-400" : ""
+                pathname === "/aboutus" ? "text-[#392993]" : ""
               } p-1`}
             >
               About
@@ -152,7 +152,7 @@ export default function FlowByteNavBar() {
               style={{ width: "100%" }}
               href="/volunteer"
               className={`link ${
-                pathname === "/volunteer" ? "text-blue-400" : ""
+                pathname === "/volunteer" ? "text-[#392993]" : ""
               } p-1`}
             >
               Volunteer
@@ -162,7 +162,7 @@ export default function FlowByteNavBar() {
               style={{ width: "100%" }}
               href="/faqs"
               className={`link ${
-                pathname === "/faqs" ? "text-blue-400" : ""
+                pathname === "/faqs" ? "text-[#392993]" : ""
               } p-1`}
             >
               FAQs

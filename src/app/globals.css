@@ -33,8 +33,8 @@ body {
 }
 
 @font-face {
-  font-family: 'Nunito';
-  src: url('/fonts/Nunito-Regular.ttf') format('truetype'); /* Adjust the path to your font file */
+  font-family: "Nunito";
+  src: url("/fonts/Nunito-Regular.ttf") format("truetype"); /* Adjust the path to your font file */
   font-weight: normal;
   font-style: normal;
 }
@@ -43,8 +43,9 @@ body {
   padding: 0.6em 2em;
   border: none;
   outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
+  /* color: rgb(255, 255, 255); */
+  color: black;
+  background: white;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -52,6 +53,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-weight: 700;
 }
 
 .button-85:before {
@@ -100,14 +102,11 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #222;
+  background: white;
   left: 0;
   top: 0;
   border-radius: 10px;
 }
-
-
-
 
 .containerStepper {
   text-align: center;
@@ -139,14 +138,14 @@ body {
   position: absolute;
   z-index: 99;
   transition: width 1s;
-  border:"2px solid red";
+  border: "2px solid red";
 }
 
 .screen-indicator {
   border-radius: 50%;
   border: 3px solid lightgrey;
   background-color: white;
- 
+
   color: gray;
   transition: border-color color;
   transition-duration: 0.7s;
@@ -179,45 +178,43 @@ body {
   background-color: lightgray;
 }
 
-
 @media screen and (max-width: 1019px) {
   .stepper-wrapper {
-    width: 600px; 
+    width: 600px;
   }
 }
 
 @media screen and (max-width: 760px) {
   .stepper-wrapper {
-    width: 500px; 
+    width: 500px;
   }
 }
 
 @media screen and (max-width: 670px) {
   .stepper-wrapper {
-    width: 500px; 
+    width: 500px;
   }
 }
 
 @media screen and (max-width: 567px) {
   .stepper-wrapper {
-    width: 350px; 
+    width: 350px;
   }
 }
 
 @media screen and (max-width: 524px) {
-  .first-container{
+  .first-container {
     padding-left: 0;
     padding-right: 0;
   }
   .social-icons {
     display: grid;
     grid-template-columns: repeat(5, 20%);
-  
   }
 }
 
 @media screen and (max-width: 421px) {
   .stepper-wrapper {
-    width: 250px; 
+    width: 250px;
   }
 }
