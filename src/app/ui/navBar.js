@@ -146,6 +146,16 @@ export default function FlowByteNavBar() {
             >
               About
             </Link>
+            <Link
+              onClick={width < 640 && toggleMenu}
+              style={{ width: "100%" }}
+              href="/volunteer"
+              className={`link ${
+                pathname === "/volunteer" ? "text-[#392993]" : ""
+              } p-1`}
+            >
+              Volunteer
+            </Link>
 
             {/* <Link
               onClick={width < 640 && toggleMenu}

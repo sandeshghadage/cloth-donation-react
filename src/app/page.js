@@ -84,12 +84,12 @@ export default function Home() {
     {
       slogan: "One Garment at a Time",
       content:
-        "We're dedicated to facilitating the seamless journey of clothing donations from collection to distribution, ensuring every garment finds its purpose.",
+        "We are dedicated to facilitating the seamless journey of clothing donations from collection to distribution, ensuring every garment finds its purpose.",
     },
     {
       slogan: "Your Donation, Their Dignity.",
       content:
-        "At our core, we're committed to making a tangible impact by connecting donors with those in need through effective clothing collection and distribution.",
+        "At our core, We are committed to making a tangible impact by connecting donors with those in need through effective clothing collection and distribution.",
     },
   ];
   return (
@@ -133,7 +133,7 @@ export default function Home() {
             }}
           >
             <div className="text-white font-bold">
-              Donation service is only available in Delhi NCR & Jaipur
+              Donation Service Is Only Available In Delhi NCR & Jaipur
             </div>
           </div>
           <div className="text-4xl md:text-6xl font-bold">
@@ -143,7 +143,7 @@ export default function Home() {
             Share. Care. Wear.
           </div> */}
           <div className="text-xl md:text-2xl font-medium">
-            Transforming lives, one garment at a time. Join us today!
+            Transforming Lives, One Garment At A Time. Join Us Today!
           </div>
           <div className="flex w-full justify-center gap-3 p-3">
             <Link href="/form" class="button-85" role="button">
@@ -199,7 +199,7 @@ export default function Home() {
           <div className="text-xl font-bold text-orange-500">Our Story __</div>
           <div className="text-2xl font-medium text-white">Who are we?</div>
           <div className="text-base font-medium text-white">
-            We're on a mission to bridge the gap between those with excess
+            We are on a mission to bridge the gap between those with excess
             clothing and those in need. Through our platform, we make it easy to
             donate gently used clothing, spreading warmth and dignity to
             individuals and communities worldwide. Join us in making a
@@ -353,7 +353,7 @@ export default function Home() {
           className="bg-white h-36 flex flex-col justify-center items-center gap-3"
           style={{ color: "#292929" }}
         >
-          <div className="text-4xl font-bold">Testimonial</div>
+          <div className="text-4xl font-bold text-[#392993] ">Testimonial</div>
           <div
             className="text-base font-medium"
             style={{ color: "#bdbdbd", letterSpacing: "2px" }}
@@ -389,8 +389,7 @@ export default function Home() {
       {/* Gallary */}
       <div>
         <div
-          className="bg-white h-36 flex justify-center items-center text-4xl font-bold"
-          style={{ color: "#292929" }}
+          className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] "
         >
           Gallary
         </div>

@@ -66,15 +66,7 @@ export default function FlowByteFooter() {
             </div>
             <div className=" px-10  first-container md:px-5 xl:px-16">
               <div className="flex flex-col gap-4 md:gap-6">
-                <p
-                  style={{
-                    letterSpacing: "1px",
-                    fontWeight: "600",
-                    fontSize: "24px",
-                  }}
-                >
-                  CONTACT INFO
-                </p>
+                <p className="text-[#392993] font-bold text-3xl ">Contact Info</p>
 
                 <span className=" flex flex-row gap-2 ">
                   <p>
