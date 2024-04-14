@@ -15,7 +15,7 @@ export default function AboutUS() {
         <div className="absolute inset-0  bg-opacity-40"></div>
         <div className="relative flex flex-col justify-center items-center w-full z-10">
           <span className="text-4xl md:text-7xl xl:text-8xl text-white">
-            HOW WE WORK
+            How We Work
           </span>
         </div>
       </div>
