@@ -36,8 +36,9 @@ export default function FlowByteFooter() {
                   />
                 </div>
                 <span className="tx-lg">
-                  Towards the end of the 19th century, with the advent of the
-                  New Liberalism and the innovative
+                  Working towards the mission of “Har Tan Kapda”. Our mission is
+                  to provide neat and clean clothes to each and every individual
+                  who is in need.
                 </span>
                 <div className="grid grid-cols-7 gap-0 social-icons md:grid-cols-5">
                   <FooterIcon

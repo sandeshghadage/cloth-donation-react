@@ -14,15 +14,7 @@ export default function Donation() {
           minHeight: "70vh",
         }}
       >
-        {/* Overlay with faded color */}
-        <div
-          className="absolute inset-0  bg-opacity-40"
-          style={{
-            zIndex: 0,
-            backgroundColor: "black",
-            opacity: 0.8,
-          }}
-        ></div>
+        
 
         {/* Text */}
         <div className="relative flex flex-col justify-center items-center w-full z-10">
@@ -38,10 +30,11 @@ export default function Donation() {
           <div className="text-2xl font-medium text-white">Why Choose Us?</div> */}
           <div className="text-lg font-medium text-white">
             Your generosity has the power to transform lives. Your donation will
-            directly provide food and clothing to those in need. A simple act of
-            kindness can offer hope and support. Help us create a more
-            compassionate community. Your contribution, no matter the size,
-            makes a difference. Donate now.
+            directly help us create an ecosystem of individuals and resources
+            who will help in providing neat and clean clothes to those who are
+            in need. A simple act of kindness can offer hope and support. Help
+            us create a more compassionate community. Your contribution, no
+            matter the size, makes a difference. Donate now!
           </div>
           {/* <Link
             href={"#"}

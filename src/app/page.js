@@ -216,7 +216,7 @@ export default function Home() {
           <div className="text-xl font-bold text-orange-500">Our Story __</div>
           <div className="text-2xl font-medium text-white">Why Choose Us?</div>
           <div className="text-base font-medium text-white">
-            Clients choose us for our seamless donation process, extensive
+            Donators choose us for our seamless donation process, extensive
             network of recipients, and commitment to making a tangible
             difference. With Old Cloth Foundation, you can trust your
             contributions will directly impact those in need, fostering warmth

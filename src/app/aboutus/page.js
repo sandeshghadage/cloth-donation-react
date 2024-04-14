@@ -12,14 +12,7 @@ export default function AboutUS() {
         }}
       >
         {/* Overlay with faded color */}
-        <div
-          className="absolute inset-0  bg-opacity-40"
-          style={{
-            zIndex: 0,
-            backgroundColor: "black",
-            opacity: 0.8,
-          }}
-        ></div>
+        <div className="absolute inset-0  bg-opacity-40"></div>
         <div className="relative flex flex-col justify-center items-center w-full z-10">
           <span className="text-4xl md:text-7xl xl:text-8xl text-white">
             HOW WE WORK
@@ -164,13 +157,13 @@ export default function AboutUS() {
 
           <div className=" absolute inset-0 flex flex-col justify-center items-center w-full md:px-16 px-8 py-20 ">
             <p className="mb-3 font-normal text-white dark:text-white text-xl">
-              Share At Door Step makes it super easy for you to make non-cash
-              donations. Don’t we all have a lot of clothes, books, and other
-              household goods just lying at some corner and getting dusted. It’s
-              time to give them a new life by donating them to those who in need
-              and bring smiles on their faces!! Just schedule a pickup and get
-              the donations picked up from your doorstep. Now Spreading
-              Happiness is just a click away!!
+              Do you want to clear out clutter and do something meaningful at
+              the same time? Old Cloth Foundation Step provides the perfect
+              solution. Donate your gently used clothes, books, and other
+              household goods and help those less fortunate. Not only will you
+              declutter your home, but you'll also experience the heartwarming
+              feeling of making a difference. Their convenient doorstep pickup
+              service makes the process effortless.
             </p>
           </div>
         </div>
@@ -183,29 +176,73 @@ export default function AboutUS() {
               opacity: 0.8,
             }}
           ></div>
-          <div className="flex flex-col  w-full h-full justify-center items-center px-10 py-10 text-white">
+          {/* <div className="flex flex-col  w-full h-full justify-center items-center px-10 py-10 text-white">
             <h3 className="text-3xl font-bold ml-6 ">
               How to Schedule a pickup?
             </h3>
 
             <ul className="space-y-4 list-inside">
               <li>
-                <ol className="ps-5 my-4 mb-24 space-y-1 list-decimal list-inside ">
+                <ol className="ps-5 my-4 mb-24 space-y-1 ">
                   <li className="text-xl">
-                    Go to our Home page and enter your location.
+                    Start on our Home page. Find the location field and enter
+                    your address.
                   </li>
                   <li className="text-xl">
-                    Choose the option that you want to avail- Doorstep pickup
-                    (to avail a pickup) or Drop off (in case you want to drop
-                    off the items yourself).
+                    <div className="font-bold">2. Choose your service: </div>
+                    <ol>
+                      <div className="font-bold">
+                        Doorstep Pickup: We'll come to you! Drop-Off: Prefer to
+                      </div>
+                      <div className="font-bold">
+                        bring your items to us? Select this option.
+                      </div>
+                    </ol>
                   </li>
                   <li className="text-xl">
-                    Select a convenient slot, fill in your details, and schedule
-                    a pickup.
+                    <div className="font-bold">
+                      Pick a time that works for you. View the available slots
+                      and select the one that fits your schedule. Enter your
+                      contact details and confirm your selection.
+                    </div>
                   </li>
                 </ol>
               </li>
             </ul>
+          </div> */}
+          <div className="flex flex-col  w-full h-full justify-center mr-2 px-10 py-10 container mx-auto p-6 text-white">
+            <h2 className="mb-4 text-2xl font-bold ml-6">
+              How to Schedule a Pickup or Drop-Off
+            </h2>
+
+            <ol className="list-outside list-decimal pl-6">
+              <li className="mb-3">
+                <p className="mb-1">
+                  <span className="font-bold">Start on our Home page:</span>{" "}
+                  Find the location field and enter your address.
+                </p>
+              </li>
+              <li className="mb-3">
+                <p className="mb-1 font-semibold">Choose your service:</p>
+                <ul className="list-inside list-disc">
+                  <li>Doorstep Pickup: We'll come to you!</li>
+                  <li>
+                    Drop-Off: Prefer to bring your items to us? Select this
+                    option.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p className="mb-1">
+                  <span className="font-bold">
+                    Pick a time that works for you:{" "}
+                  </span>{" "}
+                  View the available slots and select the one that fits your
+                  schedule. Enter your contact details and confirm your
+                  selection.
+                </p>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
