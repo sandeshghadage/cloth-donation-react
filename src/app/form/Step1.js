@@ -29,6 +29,8 @@ const Step1 = ({
   cords,
   setLocationError,
   locationError,
+  step4Data,
+  setStep4Data,
 }) => {
   const mapKey = process.env.REACT_APP_API_KEY;
 
@@ -39,35 +41,15 @@ const Step1 = ({
     },
     zoom: 11,
   };
-  // const handleLocationChange = (data) => {
-  //   setStep1Data(data);
-  // };
-
-  // const handleProceed = () => {
-  //   if (!step1Data.location.length > 1) {
-  //     console.log(22);
-  //     setCurrStep(2);
-  //   } else {
-  //     console.log(25);
-  //     setStep1Data((prevData) => ({
-  //       ...prevData,
-  //       error: true,
-  //     }));
-  //   }
-  // };
 
   const handleProceed = () => {
     if (!cords) {
       setLocationError(true);
-      // Check if location is empty
+
       console.log("Location is empty");
-      // setStep1Data((prevData) => ({
-      //   ...prevData,
-      //   error: true,
-      // }));
     } else {
       console.log("Location is not empty");
-      setCurrStep(2); // Proceed to the next step
+      setCurrStep(2);
     }
   };
 
@@ -102,6 +84,7 @@ const Step1 = ({
               // console.log(87, data);
               setCords(data);
               setStep1Data(data);
+              setStep4Data({ ...step4Data, location: place.formatted_address });
             }}
           />
 

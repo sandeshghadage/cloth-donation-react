@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req, res) {
   try {
     const data = await req.json();
-    console.log(106, data);
 
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -22,23 +21,25 @@ export async function POST(req, res) {
       subject: "Confirmation of Donation Selection",
       text: `Hello ${
         data?.userDetails?.name
-      },\n\n Thank you for choosing to donate through [Your Website Name]. Your generosity will make a significant difference in the lives of those in need.
-      \n\n This email serves as confirmation of the items you have selected for donation. Below is a summary of your donation: \n\n
-      Items Selected: \nCart Item: ${data?.cartItems
+      },\n\nThank you for choosing to donate through Old Cloth Foundation. Your generosity will make a significant difference in the lives of those in need.
+      \nThis email serves as confirmation of the items you have selected for donation. Below is a summary of your donation Items Selected: \nCart Item: ${data?.cartItems
         ?.filter((item) => item.qty > 0)
         ?.map((item) => `${item?.qty} ${item?.name}`)
         .join(", ")}
-      \n Please review the details above and ensure everything is accurate. If you have any questions or need to make any changes, please reply to this email or contact us at [Your Contact Information].\n
-      Thank you again for your generosity and support. \n\n Best regards,\n Old Cloth Foundation`,
+      \nPlease review the details above and ensure everything is accurate. If you have any questions or need to make any changes, please reply to this email or contact us at agarwalritesh11@gmail.com.
+      \nThank you again for your generosity and support.\n\nBest regards,\nOld Cloth Foundation`,
     });
 
     let selfInfo = await transporter.sendMail({
       from: "Neha Rajbhar",
       to: "nr470245@gmail.com",
       subject: "Donation Selection Notification",
-      text: `Dear Team, \n\n We have received a donation selection from [Donor's Name]. Below are the details of the items selected: \n\n Info :
+      text: `Dear Team, \n\nWe have received a donation selection from ${
+        data?.userDetails?.name
+      }. Below are the details of the items selected: \nInfo :
 
-      \n\nName: ${data?.userDetails?.name}\nEmail: ${data?.userDetails?.email}
+      \nName: ${data?.userDetails?.name}
+      \nEmail: ${data?.userDetails?.email}
       \nMobile number: ${data?.userDetails?.mobileNumber}
       \nFlat: ${data?.userDetails?.flat}
       \nAddress: ${data?.userDetails?.address}
@@ -47,15 +48,16 @@ export async function POST(req, res) {
       \nDay Choosen: ${data?.time.day}
       \nTime Choosen:${data?.time?.timeSlot}
       \nLocation: ${data?.location}
-      \nVehicle Type: ${data?.vehicalType}
+      \nPickup Type Name: ${data?.pickupData?.name}
+      \nPickup Type Cost: ${data?.pickupData?.cost}
       \nCart Item: ${data?.cartItems
         ?.filter((item) => item.qty > 0)
         ?.map((item) => `${item?.qty} ${item?.name}`)
         .join(", ")}
       \nMessage: ${
         data.note
-      } \n\n Please ensure that the inventory is updated accordingly. If you require any further information, feel free to reach out.
-      \n Thank you. \n\n Best regards,\n Team Old Cloth Foundation
+      } \n Please ensure that the inventory is updated accordingly. If you require any further information, feel free to reach out.
+      \nThank you. \n\nBest regards,\nTeam Old Cloth Foundation
 
       `,
     });

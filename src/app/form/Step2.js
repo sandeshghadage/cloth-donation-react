@@ -3,14 +3,13 @@ import { donationData } from "./page";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// interface Step2Props {
-//   setCurrStep: React.Dispatch<React.SetStateAction<number>>;
-//   setStep2Data: React.Dispatch<React.SetStateAction<donationData>>;
-//   data: donationData;
-//   step2Data: donationData;
-// }
-
-const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
+const Step2 = ({
+  setCurrStep,
+  setStep2Data,
+  step2Data,
+  step4Data,
+  setStep4Data,
+}) => {
   const [optionData, setOptionData] = useState([
     {
       name: "Light Pickup",
@@ -24,24 +23,9 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
     },
   ]);
 
-  // const handleLocationselect = (value) => {
-  //   setStep2Data((prevData) => ({
-  //     ...prevData,
-  //     vehicalType: value.name,
-  //   }));
-  // };
-
-  // const handleProceed = () => {
-  //   setCurrStep(3);
-  // };
-
   const handleProceed = () => {
     const found = step2Data.some((item) => item.isChecked == true);
     if (!found) {
-      // setStep2Data((prevData) => ({
-      //   ...prevData,
-      //   error: true,
-      // }));
       toast.error("Please select vehicle before proceeding");
     } else {
       console.log("Location is not empty");
@@ -66,7 +50,10 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
         };
       }
     });
+
     setStep2Data(updatedData);
+
+    setStep4Data({ ...step4Data, pickupData: clickedItem });
   };
   return (
     <div
@@ -78,7 +65,7 @@ const Step2 = ({ setCurrStep, setStep2Data, step2Data }) => {
         HOW DO YOU WISH TO DONATE?
       </h3>
       <h6 className="text-center">
-        Options shown as per your location: Pune, Maharashtra, India
+        Options shown as per your location: {step4Data.location}
       </h6>
       <div
         className="flex justify-center border p-4 flex-col"

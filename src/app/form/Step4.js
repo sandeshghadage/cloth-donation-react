@@ -17,6 +17,7 @@ const Step4 = ({
 }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [isSelectedTimeSlot, setSelectedTimeSlot] = useState({
     day: "",
@@ -69,8 +70,9 @@ const Step4 = ({
   const handleData = (day, timeSlot) => {
     setSelectedTimeSlot({ day, time: timeSlot });
   };
-
+  console.log(8888, step4Data);
   const onSubmit = async () => {
+    console.log(99, finalData);
     if (isChecked === true && Object?.keys(step4Data.time).length != 0) {
       if (hasErrors()) {
         toast.error("Please check all fields should be filled");
@@ -128,9 +130,11 @@ const Step4 = ({
         error = value.trim() === "" ? true : false;
         break;
       case "email":
+        setErr(true);
         error = value.includes("@") ? false : true;
         break;
       case "mobileNumber":
+        setErr(true);
         error = value.length === 10 ? false : true;
         break;
       case "flat":
@@ -258,11 +262,11 @@ const Step4 = ({
                   onChange={handleStep4InputChange}
                 />
 
-                {step4Data.errors.name && (
+                {/* {!step4Data.errors.name && (
                   <span style={{ color: "#db233e" }} className=" text-xs pt-1">
                     Name field is required
                   </span>
-                )}
+                )} */}
               </div>
               <div className="w-10/12 h-10 border-2 border-[#392993] rounded-md">
                 <input
@@ -274,7 +278,7 @@ const Step4 = ({
                   value={step4Data.userDetails.email}
                   onChange={handleStep4InputChange}
                 />
-                {step4Data.errors.email && (
+                {step4Data.errors.email && err && (
                   <span style={{ color: "#db233e" }} className=" text-xs pt-1">
                     email field is required and should be valid email
                   </span>
@@ -290,7 +294,7 @@ const Step4 = ({
                   value={step4Data.userDetails.mobileNumber}
                   onChange={handleStep4InputChange}
                 />
-                {step4Data.errors.mobileNumber && (
+                {step4Data.errors.mobileNumber && err && (
                   <span style={{ color: "#db233e" }} className=" text-xs pt-1">
                     Mobile number is required & should be 10 digits
                   </span>
@@ -306,14 +310,14 @@ const Step4 = ({
                     value={step4Data.userDetails.flat}
                     onChange={handleStep4InputChange}
                   />
-                  {step4Data.errors.flat && (
+                  {/* {!step4Data.errors.flat && (
                     <span
                       style={{ color: "#db233e" }}
                       className=" text-xs pt-1"
                     >
                       Flat field is required
                     </span>
-                  )}
+                  )} */}
                 </div>
                 <div className="w-full h-full  flex flex-col justify-center  rounded-md">
                   <input
@@ -324,14 +328,14 @@ const Step4 = ({
                     value={step4Data.userDetails.address}
                     onChange={handleStep4InputChange}
                   />
-                  {step4Data.errors.address && (
+                  {/* {!step4Data.errors.address && (
                     <span
                       style={{ color: "#db233e" }}
                       className=" text-xs pt-1"
                     >
                       Address field is required
                     </span>
-                  )}
+                  )} */}
                 </div>
               </div>
               <div className="w-10/12 h-15 flex flex-row justify-center gap-4 ">
@@ -344,14 +348,14 @@ const Step4 = ({
                     value={step4Data.userDetails.city}
                     onChange={handleStep4InputChange}
                   />
-                  {step4Data.errors.city && (
+                  {/* {!step4Data.errors.city && (
                     <span
                       style={{ color: "#db233e" }}
                       className=" text-xs pt-1"
                     >
                       city field is required
                     </span>
-                  )}
+                  )} */}
                 </div>
                 <div className="w-full h-full   flex flex-col justify-center  rounded-md">
                   <input
@@ -362,11 +366,11 @@ const Step4 = ({
                     value={step4Data.userDetails.pincode}
                     onChange={handleStep4InputChange}
                   />
-                  {step4Data.errors.pincode && (
+                  {/* {!step4Data.errors.pincode && (
                     <span className="text-red-500 text-sm pt-2">
                       Pincode field is required
                     </span>
-                  )}
+                  )} */}
                 </div>
               </div>
               <div className="w-9/12 h-10 mb-1 w-full px-6">

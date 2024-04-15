@@ -11,6 +11,7 @@ const Form = () => {
   const [cords, setCords] = useState(null);
   const [locationError, setLocationError] = useState(false);
   const [step1Data, setStep1Data] = useState({});
+
   let var3 = [
     {
       name: "Self Drop (Gurgaon)",
@@ -56,6 +57,8 @@ const Form = () => {
     },
     note: "",
     time: {},
+    pickupData: null,
+
     errors: {
       name: true,
       email: true,
@@ -66,7 +69,9 @@ const Form = () => {
       pincode: true,
     },
     isChecked: false,
+    location: "",
   });
+  console.log(15, step4Data);
 
   const [allDataCollection, setAllDataCollection] = useState({
     location: "",
@@ -298,6 +303,8 @@ const Form = () => {
             setCords={setCords}
             setLocationError={setLocationError}
             locationError={locationError}
+            step4Data={step4Data}
+            setStep4Data={setStep4Data}
           />
         )}
         {currStep === 2 && (
@@ -305,6 +312,8 @@ const Form = () => {
             setCurrStep={setCurrStep}
             setStep2Data={setStep2Data}
             step2Data={step2Data}
+            step4Data={step4Data}
+            setStep4Data={setStep4Data}
           />
         )}
         {currStep === 3 && (
