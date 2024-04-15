@@ -28,7 +28,6 @@ const Step2 = ({
     if (!found) {
       toast.error("Please select vehicle before proceeding");
     } else {
-      console.log("Location is not empty");
       setCurrStep(3);
     }
   };

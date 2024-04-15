@@ -45,10 +45,7 @@ const Step1 = ({
   const handleProceed = () => {
     if (!cords) {
       setLocationError(true);
-
-      console.log("Location is empty");
     } else {
-      console.log("Location is not empty");
       setCurrStep(2);
     }
   };
@@ -81,7 +78,7 @@ const Step1 = ({
                 lat: place.geometry.location.lat(),
                 lng: place.geometry.location.lng(),
               };
-              // console.log(87, data);
+
               setCords(data);
               setStep1Data(data);
               setStep4Data({ ...step4Data, location: place.formatted_address });

@@ -70,9 +70,8 @@ const Step4 = ({
   const handleData = (day, timeSlot) => {
     setSelectedTimeSlot({ day, time: timeSlot });
   };
-  console.log(8888, step4Data);
+
   const onSubmit = async () => {
-    console.log(99, finalData);
     if (isChecked === true && Object?.keys(step4Data.time).length != 0) {
       if (hasErrors()) {
         toast.error("Please check all fields should be filled");

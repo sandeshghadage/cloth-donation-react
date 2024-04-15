@@ -71,7 +71,6 @@ const Form = () => {
     isChecked: false,
     location: "",
   });
-  console.log(15, step4Data);
 
   const [allDataCollection, setAllDataCollection] = useState({
     location: "",
