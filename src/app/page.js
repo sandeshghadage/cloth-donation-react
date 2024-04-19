@@ -146,7 +146,7 @@ export default function Home() {
             Transforming Lives, One Garment At A Time. Join Us Today!
           </div>
           <div className="flex w-full justify-center gap-3 p-3">
-            <Link href="/form" class="button-85" role="button">
+            <Link href="/form" className="button-85" role="button">
               Schedule Pickup / Drop
             </Link>
           </div>

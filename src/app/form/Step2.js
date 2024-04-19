@@ -36,8 +36,9 @@ const Step2 = ({
     setCurrStep(1);
   }
   const handleCheck = (clickedItem) => {
+    console.log(clickedItem, "clickedItem");
     const updatedData = step2Data.map((item) => {
-      if (item.name === clickedItem.name) {
+      if (item.id === clickedItem.id) {
         return {
           ...item,
           isChecked: true,
@@ -161,7 +162,7 @@ const Step2 = ({
               className="p-4"
               onClick={() => handleCheck(item)}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex gap-2">
                 {item.isChecked ? (
                   <div
                     // onClick={() => handleCheck(item.name)}
@@ -192,11 +193,16 @@ const Step2 = ({
                     />
                   </svg>
                 )}
-                <div
-                  className="dark:text-black"
-                  style={{ fontSize: "15px", fontWeight: "600" }}
-                >
-                  {item.name}
+                <div className="flex flex-col border border-red">
+                  <div
+                    className="dark:text-black"
+                    style={{ fontSize: "15px", fontWeight: "600" }}
+                  >
+                    {item.name}
+                  </div>
+                  <div className="w-80 leading-tight text-xs pt-1 ">
+                    {item.address}
+                  </div>
                 </div>
               </div>
               <div

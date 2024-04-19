@@ -30,6 +30,24 @@ const Step3 = ({ setCurrStep, setStep3Data, step3Data }) => {
     },
   ];
 
+  [
+    {
+      name: "Clothes (No. Of Bags)",
+      qty: 0,
+      volume: 5,
+    },
+    {
+      name: "Footwear (No. of Pairs)",
+      qty: 0,
+      volume: 5,
+    },
+    {
+      name: "Stationary (No. of Stationary)",
+      qty: 0,
+      volume: 5,
+    },
+  ];
+
   function calcVolume() {
     let totalVolume = 0;
     if (step3Data && step3Data.cartItems) {

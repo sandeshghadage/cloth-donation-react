@@ -14,12 +14,26 @@ const Form = () => {
 
   let var3 = [
     {
-      name: "Self Drop (Gurgaon)",
+      id: "1",
+      name: "Self Drop (Jaipur)",
+      address:
+        "114A, Janpath Brijmandal Calony, Kalwar Road, Jaipur, Rajasthan, 302012",
       cost: "FREE",
       isChecked: false,
     },
     {
-      name: "Self Drop (Delhi NCR)",
+      id: "2",
+      name: "Self Drop (Jaipur)",
+      address:
+        "21/12, Bhargu Path, Mansarovar, Near Mohan Jewellery, Madhayam Marg Mansarovar, 302020",
+      cost: "FREE",
+      isChecked: false,
+    },
+    {
+      id: "3",
+      name: "Self Drop (Ghaziabad, Uttar Pradesh)",
+      address:
+        "Urja Yog Foundation, Plot 724, Flat No #C1, Shakti Khand 4, Indirapuram, Ghaziabad, Uttar Pradesh, 201014",
       cost: "FREE",
       isChecked: false,
     },
@@ -28,17 +42,17 @@ const Form = () => {
   const [step3Data, setStep3Data] = useState({
     cartItems: [
       {
-        name: "Clothes",
+        name: "Clothes (No. Of Bags)",
         qty: 0,
         volume: 5,
       },
       {
-        name: "Footwear",
+        name: "Footwear (No. of Pairs)",
         qty: 0,
         volume: 5,
       },
       {
-        name: "Stationery",
+        name: "Stationary (No. of Stationary)",
         qty: 0,
         volume: 5,
       },
@@ -180,7 +194,7 @@ const Form = () => {
     {
       component: (
         <svg
-          class="w-8 h-8 text-gray-800 dark:text-white"
+          className="w-8 h-8 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"

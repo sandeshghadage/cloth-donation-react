@@ -66,17 +66,19 @@ export default function FlowByteFooter() {
             </div>
             <div className=" px-10  first-container md:px-5 xl:px-16">
               <div className="flex flex-col gap-4 md:gap-6">
-                <p className="text-[#392993] font-bold text-3xl ">Contact Info</p>
+                <p className="text-[#392993] font-bold text-3xl ">
+                  Contact Info
+                </p>
 
                 <span className=" flex flex-row gap-2 ">
                   <p>
-                    114A, Janpath Brijmandal Calony Kalwar Road Jaipur
-                    Rajasthan  302012
+                    114A, Janpath Brijmandal Calony, Kalwar Road, Jaipur,
+                    Rajasthan, 302012.
                   </p>
                 </span>
                 <span className=" flex flex-row gap-2">
                   <svg
-                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    className="w-6 h-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -92,7 +94,7 @@ export default function FlowByteFooter() {
                 </span>
                 <span className=" flex flex-row gap-2">
                   <svg
-                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    className="w-6 h-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="34"
