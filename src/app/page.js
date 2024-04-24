@@ -8,6 +8,9 @@ import Link from "next/link";
 import FlowByteCarousel from "./ui/carousel";
 import Image from "next/image";
 // import { url } from "inspector";
+import DemoCarousel from "./ui/demoCarousel"
+import TestimonialSlider from "./ui/testimonialSlider"
+import RecentActivitySlider from "./ui/recentActivitySlider"
 
 export default function Home() {
   const sliderOptions = {
@@ -52,29 +55,29 @@ export default function Home() {
       },
     },
   };
-  const testimonial = [
-    {
-      name: "Rajesh Vaidya",
-      profession: "IT Consultant",
-      place: "Gurgaon",
-      content:
-        "Donating clothes through Old Cloth Foundation was a breeze! It feels great knowing my old clothes are going to someone who really needs them. Keep up the good work!",
-    },
-    {
-      name: "Ananya Singh",
-      profession: "Marketing Executive",
-      place: "Noida",
-      content:
-        "I was skeptical at first, but [Your Website Name] exceeded my expectations. The process was simple, and I received updates on where my donations went. I'm proud to be a part of such a meaningful initiative.",
-    },
-    {
-      name: "Vikram Sharma",
-      profession: "Bank Manager",
-      place: "Faridabad",
-      content:
-        "The legal definition of a charitable organization (and of charity) varies between countries and in some instances regions of the country. The regulation, the tax treatment.",
-    },
-  ];
+  // const testimonial = [
+  //   {
+  //     name: "Rajesh Vaidya",
+  //     profession: "IT Consultant",
+  //     place: "Gurgaon",
+  //     content:
+  //       "Donating clothes through Old Cloth Foundation was a breeze! It feels great knowing my old clothes are going to someone who really needs them. Keep up the good work!",
+  //   },
+  //   {
+  //     name: "Ananya Singh",
+  //     profession: "Marketing Executive",
+  //     place: "Noida",
+  //     content:
+  //       "I was skeptical at first, but [Your Website Name] exceeded my expectations. The process was simple, and I received updates on where my donations went. I'm proud to be a part of such a meaningful initiative.",
+  //   },
+  //   {
+  //     name: "Vikram Sharma",
+  //     profession: "Bank Manager",
+  //     place: "Faridabad",
+  //     content:
+  //       "The legal definition of a charitable organization (and of charity) varies between countries and in some instances regions of the country. The regulation, the tax treatment.",
+  //   },
+  // ];
   const mission = [
     {
       slogan: "From Collection to Compassion.",
@@ -361,7 +364,7 @@ export default function Home() {
             WHAT PEOPLE SAY ABOUT US
           </div>
         </div>
-        <div className="md:p-12 bg-white flex flex-col justify-center items-center">
+        {/* <div className="md:p-12 bg-white flex flex-col justify-center items-center">
           <div className="flex flex-col gap-4" style={{ width: "65%" }}>
             <div
               className="md:text-xl text-sm text-center"
@@ -384,7 +387,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        
+        <TestimonialSlider/>
       </div>
       {/* Gallary */}
       <div>
@@ -428,6 +433,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div>
+        <div
+          className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] "
+        >
+          Recent Activity
+        </div>
+        <RecentActivitySlider/>
+      </div>
+      
     </>
   );
 }
