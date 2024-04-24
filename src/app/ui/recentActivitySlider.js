@@ -51,8 +51,8 @@ export default function RecentActivitySlider() {
                                     <img src="/ourStory2.jpg" alt="gallary5" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                 </div>
                                 <div className="h-full p-4 flex flex-col justify-center">
-                                    <ul style={{ padding: 0 }}>
-                                        <li>
+                                    <ul style={{ padding: 0 }} className="dark:text-black">
+                                        <li className="dark:text-black">
                                             <span role="img" aria-label="Location">🌍</span> <strong>Location:</strong> Delhi NCR
                                         </li>
                                         <li>
