@@ -26,6 +26,9 @@ export async function POST(req, res) {
         ?.filter((item) => item.qty > 0)
         ?.map((item) => `${item?.qty} ${item?.name}`)
         .join(", ")}
+        \nPlease find below address details that you have selected as a drop location for your donation items:\n ${
+          data.pickupData.address
+        }  
       \nPlease review the details above and ensure everything is accurate. If you have any questions or need to make any changes, please reply to this email or contact us at agarwalritesh11@gmail.com.
       \nThank you again for your generosity and support.\n\nBest regards,\nOld Cloth Foundation`,
     });
