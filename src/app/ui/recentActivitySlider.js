@@ -46,7 +46,7 @@ export default function RecentActivitySlider() {
 
                     <SwiperSlide style={{ display: "flex", justifyContent: "center", backgroundColor: "white" }} >
                         <div className="md:p-4 bg-white flex flex-col justify-center items-center w-full">
-                            <div className="grid grid-cols-2 gap-4 shadow-xl p-8" style={{ width: "65%" }}>
+                            <div className="grid md:grid-cols-2 grid-cols-1 gap-4 shadow-xl md:p-8 mb-4" style={{ width: "85%" }}>
                                 <div className="h-full">
                                     <img src="/ourStory2.jpg" alt="gallary5" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                 </div>
