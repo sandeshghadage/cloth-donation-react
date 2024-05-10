@@ -56,7 +56,7 @@ export default function UpcomingEvents() {
             className=" min-h-70 bg-transparent  flex  flex-row gap-6 absolute top-24"
           >
             <Swiper
-              slidesPerView={1}
+              slidesPerView={2.5}
               spaceBetween={14}
               pagination={{
                 clickable: true,
