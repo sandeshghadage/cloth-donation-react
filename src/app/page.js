@@ -8,9 +8,10 @@ import Link from "next/link";
 import FlowByteCarousel from "./ui/carousel";
 import Image from "next/image";
 // import { url } from "inspector";
-import DemoCarousel from "./ui/demoCarousel"
-import TestimonialSlider from "./ui/testimonialSlider"
-import RecentActivitySlider from "./ui/recentActivitySlider"
+import DemoCarousel from "./ui/demoCarousel";
+import TestimonialSlider from "./ui/testimonialSlider";
+import RecentActivitySlider from "./ui/recentActivitySlider";
+import UpcomingEvents from "./ui/upcomingEvents";
 
 export default function Home() {
   const sliderOptions = {
@@ -388,14 +389,12 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-        
-        <TestimonialSlider/>
+
+        <TestimonialSlider />
       </div>
       {/* Gallary */}
       <div>
-        <div
-          className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] "
-        >
+        <div className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] ">
           Gallary
         </div>
         <div className="grid sm:grid-cols-4 grid-cols-1 gap-0">
@@ -434,14 +433,14 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div
-          className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] "
-        >
+        <div className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] ">
           Recent Activity
         </div>
-        <RecentActivitySlider/>
+        <RecentActivitySlider />
       </div>
-      
+      <div>
+        <UpcomingEvents />
+      </div>
     </>
   );
 }
