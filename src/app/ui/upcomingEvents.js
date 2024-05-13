@@ -49,8 +49,8 @@ export default function UpcomingEvents() {
         }}
       ></div>
 
-      <div className=" absolute inset-0 flex flex-col  w-full   py-40  ">
-        <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-9/12 h-[40rem] ">
+      <div className=" absolute inset-0 flex flex-col border-2  w-full   py-40  ">
+        <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-9/12 h-[40rem]    ">
           <div
             style={{ width: "56rem" }}
             className=" min-h-70 bg-transparent  flex  flex-row gap-6 absolute top-24"
@@ -125,13 +125,7 @@ export default function UpcomingEvents() {
             </Swiper>
           </div>
           <div className="w-3/12 min-h-40 bg-white px-6 py-6 flex flex-col gap-4 absolute right-44 top-52">
-            {/* <h5
-              className="text-4xl font-bold text-[#392993]"
-              style={{ transform: "skewY(3deg)" }}
-            >
-              Upcoming Events
-            </h5> */}
-            <h5 className="text-4xl font-medium text-[#392993] italic">
+            <h5 className="text-xl md:text-1xl lg:text-2xl font-medium text-[#392993] italic">
               <span
                 style={{ transform: "skewX(4deg)", display: "inline-block" }}
               >
@@ -145,7 +139,7 @@ export default function UpcomingEvents() {
               </span>
               vents
             </h5>
-            <p>
+            <p className="text-sm md:test-sm">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
             </p>
