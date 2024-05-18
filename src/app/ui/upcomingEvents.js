@@ -9,21 +9,33 @@ export default function UpcomingEvents() {
   const images = [
     {
       img: "/upcomingevents.jpg",
+      eventName: "Cloth Destribution - Delhi",
+      eventDate: "MAY 12",
     },
     {
       img: "/ourStory1.jpg",
+      eventName: "Cloth Donation - Jaipur",
+      eventDate: "APR 28",
     },
     {
       img: "/bgabout2.jpg",
+      eventName: "Cloth Destribution - Delhi",
+      eventDate: "APR 14",
     },
     {
       img: "/bgabout.jpg",
+      eventName: "Cloth Donation - Jaipur",
+      eventDate: "MAR 31",
     },
     {
       img: "/upcomingevents.jpg",
+      eventName: "Cloth Destribution - Delhi",
+      eventDate: "MAR 17",
     },
     {
       img: "/upcomingevents.jpg",
+      eventName: "Cloth Destribution - Delhi",
+      eventDate: "FEB 25",
     },
   ];
 
@@ -49,14 +61,14 @@ export default function UpcomingEvents() {
         }}
       ></div>
 
-      <div className=" absolute inset-0 flex flex-col border-2  w-full   py-28 md:py-40  ">
+      <div className=" absolute inset-0 flex flex-col border-2  w-full py-28 md:py-40">
         <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-10/12 h-[40rem]  hidden lg:flex ">
           <div
-            style={{ width: "56rem" }}
-            className=" min-h-70 bg-transparent  flex  flex-row gap-6 absolute top-24 "
+            style={{ width: "62rem" }}
+            className=" min-h-70 bg-transparent  flex flex-row gap-6 absolute top-24 "
           >
             <Swiper
-              slidesPerView={2.5}
+              slidesPerView={3}
               spaceBetween={14}
               pagination={{
                 clickable: true,
@@ -108,15 +120,15 @@ export default function UpcomingEvents() {
                           }}
                           className="w-2/12 h-18 bg-[#392993]  flex flex-col justify-center items-center py-4 px-8"
                         >
-                          <span className="text-[#fff]">SAT</span>
-                          <span className="text-[#fff]">88</span>
+                          <span className="text-[#fff]">{item.eventDate.split(' ')[0]}</span>
+                          <span className="text-[#fff]">{item.eventDate.split(' ')[1]}</span>
                         </div>
                       </div>
                       <div
-                        className="bg-slate-300 px-8 flex flex-row justify-center items-center"
+                        className="bg-slate-300 px-4 flex flex-row justify-center items-center"
                         style={{ height: "10%" }}
                       >
-                        <span>Event Name</span>
+                        <span>{item.eventName}</span>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -129,9 +141,9 @@ export default function UpcomingEvents() {
               <span
                 style={{ transform: "skewX(4deg)", display: "inline-block" }}
               >
-                U
+                R
               </span>
-              pcoming&nbsp;
+              ecent&nbsp;
               <span
                 style={{ transform: "skewY(3deg)", display: "inline-block" }}
               >
@@ -140,8 +152,7 @@ export default function UpcomingEvents() {
               vents
             </h5>
             <p className="text-sm md:test-sm">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              Successfully distributed clothing to families in need, spreading warmth and smiles throughout our community
             </p>
           </div>
         </div>
@@ -210,15 +221,15 @@ export default function UpcomingEvents() {
                           }}
                           className="w-2/12 h-18 bg-[#392993]  flex flex-col justify-center items-center py-4 px-8"
                         >
-                          <span className="text-[#fff]">SAT</span>
-                          <span className="text-[#fff]">88</span>
+                          <span className="text-[#fff]">{item.eventDate.split(' ')[0]}</span>
+                          <span className="text-[#fff]">{item.eventDate.split(' ')[1]}</span>
                         </div>
                       </div>
                       <div
-                        className="bg-slate-300 px-8 flex flex-row justify-center items-center"
+                        className="bg-slate-300 px-4 flex flex-row justify-center items-center"
                         style={{ height: "10%" }}
                       >
-                        <span>Event Name</span>
+                        <span>{item.eventName}</span>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -231,9 +242,9 @@ export default function UpcomingEvents() {
               <span
                 style={{ transform: "skewX(4deg)", display: "inline-block" }}
               >
-                U
+                R
               </span>
-              pcoming&nbsp;
+              ecent&nbsp;
               <span
                 style={{ transform: "skewY(3deg)", display: "inline-block" }}
               >
@@ -242,8 +253,7 @@ export default function UpcomingEvents() {
               vents
             </h5>
             <p className="text-sm md:test-sm">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              Successfully distributed clothing to families in need, spreading warmth and smiles throughout our community
             </p>
           </div>
         </div>
@@ -312,15 +322,15 @@ export default function UpcomingEvents() {
                           }}
                           className="w-2/12 h-18 bg-[#392993]  flex flex-col justify-center items-center py-4 px-8"
                         >
-                          <span className="text-[#fff]">SAT</span>
-                          <span className="text-[#fff]">88</span>
+                          <span className="text-[#fff]">{item.eventDate.split(' ')[0]}</span>
+                          <span className="text-[#fff]">{item.eventDate.split(' ')[1]}</span>
                         </div>
                       </div>
                       <div
-                        className="bg-slate-300 px-8 flex flex-row justify-center items-center"
+                        className="bg-slate-300 px-4 flex flex-row justify-center items-center"
                         style={{ height: "10%" }}
                       >
-                        <span>Event Name</span>
+                        <span>{item.eventName}</span>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -333,9 +343,9 @@ export default function UpcomingEvents() {
               <span
                 style={{ transform: "skewX(4deg)", display: "inline-block" }}
               >
-                U
+                R
               </span>
-              pcoming&nbsp;
+              ecent&nbsp;
               <span
                 style={{ transform: "skewY(3deg)", display: "inline-block" }}
               >
@@ -344,30 +354,55 @@ export default function UpcomingEvents() {
               vents
             </h5>
             <p className="text-xs md:test-sm">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              Successfully distributed clothing to families in need, spreading warmth and smiles throughout our community
             </p>
           </div>
         </div>
 
         {/* <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-11/12 h-[30rem]  flex ms:hidden "> */}
-        <div
-          // style={{ width: "56rem" }}
-          className=" min-h-70 bg-transparent border-red-600 border-2 flex w-11/12 justify-center items-center  flex-row gap-6  ms:hidden md:hidden lg:hidden "
-        >
+        <div className="relative ms:hidden" style={{height:'100%'}} >
+
+          <div
+            style={{ height: '100%' }}
+            className="absolute left-1/2 transform -translate-x-1/2 -translate-y-0 min-h-70 bg-transparent border-gray-800 border-2 flex w-11/12 justify-center items-center  flex-row gap-6  ms:hidden md:hidden lg:hidden "
+          >
+
+          </div>
+
+          <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/3 bg-white px-6 py-6 flex flex-col gap-4 w-10/12">
+            <h5 className="text-xl md:text-1xl lg:text-2xl font-medium text-[#392993] italic">
+              <span
+                style={{ transform: "skewX(4deg)", display: "inline-block" }}
+              >
+                R
+              </span>
+              ecent&nbsp;
+              <span
+                style={{ transform: "skewY(3deg)", display: "inline-block" }}
+              >
+                E
+              </span>
+              vents
+            </h5>
+            <p className="text-sm md:test-sm">
+              Successfully distributed clothing to families in need, spreading warmth and smiles throughout our community
+            </p>
+          </div>
+          <div className=" w-full flex justify-center items-center absolute left-1/2 top-32 transform -translate-x-1/2">
+
           <Swiper
             slidesPerView={1}
             spaceBetween={50}
             centeredSlides={true}
             pagination={{
               clickable: true,
+              bulletClass: 'my-custom-pagination-bullet',
             }}
             modules={[Pagination, Autoplay]}
-            // className=" p-t-8  w-full flex flex-row gap-8 h-[480px]"
-            className="p-t-8 w-full flex justify-center items-center gap-8 h-[480px]"
+            className="p-t-8 w-full flex justify-center items-center gap-8"
             style={{
               paddingTop: "20px",
-              paddingLeft: "40px",
+              paddingLeft: "20%",
               paddingRight: "40px",
             }}
             effect="fade"
@@ -414,22 +449,27 @@ export default function UpcomingEvents() {
                         }}
                         className="w-2/12 h-18 bg-[#392993]  flex flex-col justify-center items-center py-4 px-8"
                       >
-                        <span className="text-[#fff]">SAT</span>
-                        <span className="text-[#fff]">88</span>
+                        <span className="text-[#fff]">{item.eventDate.split(' ')[0]}</span>
+                        <span className="text-[#fff]">{item.eventDate.split(' ')[1]}</span>
                       </div>
                     </div>
                     <div
-                      className="bg-slate-300 px-8 flex flex-row justify-center items-center"
+                      className="bg-slate-300 px-4 flex flex-row justify-center items-center"
                       style={{ height: "10%" }}
                     >
-                      <span>Event Name</span>
+                      <span>{item.eventName}</span>
                     </div>
                   </div>
                 </SwiperSlide>
               );
             })}
           </Swiper>
+          </div>
+
         </div>
+       
+
+        
       </div>
     </div>
   );

@@ -432,12 +432,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <div className="bg-white h-36 flex justify-center items-center text-4xl font-bold text-[#392993] ">
           Recent Activity
         </div>
         <RecentActivitySlider />
-      </div>
+      </div> */}
       <div>
         <UpcomingEvents />
       </div>
