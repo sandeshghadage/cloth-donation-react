@@ -49,7 +49,7 @@ export default function UpcomingEvents() {
         }}
       ></div>
 
-      <div className=" absolute inset-0 flex flex-col border-2  w-full   py-40  ">
+      <div className=" absolute inset-0 flex flex-col border-2  w-full   py-28 md:py-40  ">
         <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-10/12 h-[40rem]  hidden lg:flex ">
           <div
             style={{ width: "56rem" }}
@@ -248,7 +248,7 @@ export default function UpcomingEvents() {
           </div>
         </div>
 
-        <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-11/12 h-[70rem]  flex md:hidden lg:hidden  ">
+        <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-11/12 h-[30rem] hidden ms:flex md:hidden lg:hidden  ">
           <div
             // style={{ width: "56rem" }}
             className=" min-h-70 bg-transparent  flex w-11/12 justify-center items-center  flex-row gap-6 absolute ms:top-52 top-24 "
@@ -262,7 +262,7 @@ export default function UpcomingEvents() {
               }}
               modules={[Pagination, Autoplay]}
               // className=" p-t-8  w-full flex flex-row gap-8 h-[480px]"
-              className="p-t-8 w-full flex justify-center items-center gap-8 h-[400px]"
+              className="p-t-8 w-full flex justify-center items-center gap-8 h-[390px]"
               style={{
                 paddingTop: "20px",
                 paddingLeft: "40px",
@@ -280,7 +280,7 @@ export default function UpcomingEvents() {
                   <SwiperSlide
                     style={{
                       display: "flex",
-                      width: "250px",
+                      width: "240px",
                       overflow: "visible",
                     }}
                     key={index}
@@ -288,7 +288,7 @@ export default function UpcomingEvents() {
                     <div
                       className=" h-[350px] "
                       style={{
-                        width: "250px",
+                        width: "240px",
                         position: "relative",
                       }}
                     >
@@ -298,8 +298,8 @@ export default function UpcomingEvents() {
                           backgroundSize: "cover",
                           backgroundRepeat: "no-repeat",
                           backgroundPosition: "center",
-                          height: "80%",
-                          width: "250px",
+                          height: "70%",
+                          width: "240px",
                         }}
                       >
                         <div
@@ -328,7 +328,7 @@ export default function UpcomingEvents() {
               })}
             </Swiper>
           </div>
-          <div className="w-5/12 min-h-40 bg-white px-6 py-6 flex flex-col gap-4 lg:right-44 lg:top-52 md:right-20 md:absolute absolute ms:right-52 ms:top-10">
+          <div className="w-5/12 min-h-40 bg-white px-6 py-6 flex flex-col gap-4 lg:right-44 lg:top-52 md:right-20 md:absolute absolute ms:right-52 ms:top-6">
             <h5 className="text-xl md:text-1xl lg:text-2xl font-medium text-[#392993] italic">
               <span
                 style={{ transform: "skewX(4deg)", display: "inline-block" }}
@@ -343,11 +343,92 @@ export default function UpcomingEvents() {
               </span>
               vents
             </h5>
-            <p className="text-sm md:test-sm">
+            <p className="text-xs md:test-sm">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
             </p>
           </div>
+        </div>
+
+        {/* <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-11/12 h-[30rem]  flex ms:hidden "> */}
+        <div
+          // style={{ width: "56rem" }}
+          className=" min-h-70 bg-transparent border-red-600 border-2 flex w-11/12 justify-center items-center  flex-row gap-6  ms:hidden md:hidden lg:hidden "
+        >
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={50}
+            centeredSlides={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            // className=" p-t-8  w-full flex flex-row gap-8 h-[480px]"
+            className="p-t-8 w-full flex justify-center items-center gap-8 h-[480px]"
+            style={{
+              paddingTop: "20px",
+              paddingLeft: "40px",
+              paddingRight: "40px",
+            }}
+            effect="fade"
+            autoplay={{
+              delay: 3000, // Adjust the delay as needed (in milliseconds)
+              disableOnInteraction: false, // Keeps autoplay running when user interacts with slides
+              pauseOnMouseEnter: true, // Pauses autoplay when user hovers over slides
+            }}
+          >
+            {images.map((item, index) => {
+              return (
+                <SwiperSlide
+                  style={{
+                    display: "flex",
+                    width: "250px",
+                    overflow: "visible",
+                  }}
+                  key={index}
+                >
+                  <div
+                    className=" h-[350px] "
+                    style={{
+                      width: "250px",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        backgroundImage: `url("${item.img}")`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        height: "70%",
+                        width: "250px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          zIndex: 99,
+                          // marginTop: "-10px",
+                          position: "absolute",
+                          right: "40px",
+                          top: "-30px",
+                        }}
+                        className="w-2/12 h-18 bg-[#392993]  flex flex-col justify-center items-center py-4 px-8"
+                      >
+                        <span className="text-[#fff]">SAT</span>
+                        <span className="text-[#fff]">88</span>
+                      </div>
+                    </div>
+                    <div
+                      className="bg-slate-300 px-8 flex flex-row justify-center items-center"
+                      style={{ height: "10%" }}
+                    >
+                      <span>Event Name</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </div>
     </div>
