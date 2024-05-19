@@ -61,11 +61,11 @@ export default function UpcomingEvents() {
         }}
       ></div>
 
-      <div className=" absolute inset-0 flex flex-col border-2  w-full py-28 md:py-40">
+      <div className=" absolute inset-0 flex flex-col border-2  w-[105%] py-28 md:py-40">
         <div className="border-gray-800 border-r-2 border-t-2 border-b-2 w-10/12 h-[40rem]  hidden lg:flex ">
           <div
             style={{ width: "62rem" }}
-            className=" min-h-70 bg-transparent  flex flex-row gap-6 absolute top-24 "
+            className=" min-h-70 bg-transparent  flex flex-row gap-8   absolute top-24 "
           >
             <Swiper
               slidesPerView={3}
